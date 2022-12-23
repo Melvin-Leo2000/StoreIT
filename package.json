@@ -1,0 +1,19 @@
+{
+  "name": "storeit",
+  "version": "1.0.0",
+  "description": "Store it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melvin-Leo2000/StoreIT.git"
+  },
+  "author": "Melvin & John",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melvin-Leo2000/StoreIT/issues"
+  },
+  "homepage": "https://github.com/Melvin-Leo2000/StoreIT#readme"
+}
