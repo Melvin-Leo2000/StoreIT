@@ -17,7 +17,7 @@ function Order() {
         address: "", 
         date: "",
         residence: "",
-        price: "",
+        price: 0,
         size: ""
     })
     
@@ -31,9 +31,6 @@ function Order() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(inputs)
-        // postUpdate(inputs, id)
-        //   .then((data) => console.log(data))
-        //   .catch(err => console.log(err))
     }
     
     return (
