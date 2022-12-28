@@ -1,9 +1,7 @@
 import React from 'react'
-import {Box, AppBar, Tab, Tabs, Toolbar, useMediaQuery, useTheme, Typography, MenuItem, IconButton } from "@mui/material"
-import {Menu,Close  } from '@mui/icons-material'
+import {AppBar, Tab, Tabs, Toolbar, useMediaQuery, Typography } from "@mui/material"
 import { useState } from 'react';
 import { Link, useNavigate  } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import MuiDrawer from './MuiDrawer';
 function Navbar() {
     const linksArr = ["home", "about","pricing" ,"faq", "contact", "order"]
@@ -11,7 +9,6 @@ function Navbar() {
     const navigate = useNavigate()
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)")
 
-    const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     return (
         
         <AppBar sx={{bgcolor: "transparent", position: "sticky"}}>
@@ -20,7 +17,10 @@ function Navbar() {
                     fontWeight="bold"
                     fontSize="clamp(1rem, 2rem, 2.25rem)"
                     color="primary"
-                    onClick={() => navigate("/home")}
+                    onClick={() => {
+                        navigate("/")
+                        
+                    }}
                     sx={{
                         "&:hover": {
                         cursor: "pointer",
@@ -29,8 +29,8 @@ function Navbar() {
                     >
                     StoreIT
                 </Typography>
-                {/* DESKTOP NAV */}
-                {isNonMobileScreens ? (<Tabs value={value} onChange={(e, val) => setValue(val)} sx={{ml: "auto", textDecoration: "none"}}>
+                {/* DESKTOP NAV n Mobile NAV*/}
+                {isNonMobileScreens ? (<Tabs TabIndicatorProps={{style: {backgroundColor: "white"}}} value={value} onChange={(e, val) => setValue(val)} sx={{ml: "auto", textDecoration: "none"}}>
                     {linksArr.map((link) => (
                         <Tab 
                             LinkComponent={Link}
@@ -41,7 +41,7 @@ function Navbar() {
                             }}}key={link} label={link} />
                         ))}
                         </Tabs>) :         
-                        <MuiDrawer />
+                    <MuiDrawer />
                 }
                     
             </Toolbar>
