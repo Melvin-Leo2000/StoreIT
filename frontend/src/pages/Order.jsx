@@ -1,6 +1,11 @@
 import React from 'react'
 import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
 import { useState } from 'react';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
 
 function Order() {
     const [post, setPost] = useState()
@@ -11,7 +16,9 @@ function Order() {
         number : "", 
         address: "", 
         date: "",
-        residence: ""
+        residence: "",
+        price: "",
+        size: ""
     })
     
     const handleChange = (e) => {
@@ -23,6 +30,7 @@ function Order() {
       }
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(inputs)
         // postUpdate(inputs, id)
         //   .then((data) => console.log(data))
         //   .catch(err => console.log(err))
@@ -38,8 +46,13 @@ function Order() {
     >
         <Box display="flex" margin= "auto" padding={2}>
             <Typography fontWeight={'bold'} variant='h4' fontFamily={"dancing script"}>
-                Order with Us!
+                Order with us!
             </Typography>
+        </Box>
+        <Box display="flex" margin= "auto" padding={2}>
+          <Typography>
+            You can add description here
+          </Typography>
         </Box>
         <form onSubmit={handleSubmit}>
           <Box 
@@ -64,7 +77,7 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="description"
+              name="date"
               type="date"
               value={inputs.date}
               variant='outlined' 
@@ -116,6 +129,24 @@ function Order() {
               variant='filled' 
               required
               margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Size</FormLabel>
+            <FormControl variant="filled" sx={{fontFamily: "quicksand"}}>
+              <InputLabel id="demo-simple-select-helper-label">Size</InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                name="size"
+                value={inputs.size}
+                label="Size"
+                required
+                onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
 
             <Button 
               type= "submit" 
