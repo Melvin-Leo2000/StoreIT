@@ -9,17 +9,11 @@ const userSchema = mongoose.Schema(
     email: {
       type: String,
       required: [true, "Please add an email"], //return as an array with the first value is true and the message
-      unique: true,
+      unique: false,
     },
-    password: {
+    number: {
       type: String,
-      minLength: 8,
-      required: [true, "Please add a password"],
-    },
-    isAdmin: {
-      type: Boolean,
-      required: true,
-      default: false,
+      required: [true, "Please add a number"],
     },
   },
   {
@@ -28,4 +22,4 @@ const userSchema = mongoose.Schema(
 );
 
 //        this is passing in the name 'User' and the userSchema object
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("users", userSchema);
