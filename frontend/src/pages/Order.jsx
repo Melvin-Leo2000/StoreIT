@@ -8,9 +8,10 @@ function Order() {
         name: "", 
         email: "", 
         date: "", 
-        imageURL : "", 
-        location: "", 
+        number : "", 
+        address: "", 
         date: "",
+        residence: ""
     })
     
     const handleChange = (e) => {
@@ -56,7 +57,9 @@ function Order() {
              label="Name"
              placeholder="Enter your name"
              variant='filled' 
-             margin='normal' />
+             margin='normal' 
+             required
+             />
 
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
             <TextField 
@@ -65,6 +68,7 @@ function Order() {
               type="date"
               value={inputs.date}
               variant='outlined' 
+              required
               margin='normal'/>
 
             <FormLabel sx={{fontFamily: "quicksand"}}>NUS email</FormLabel>
@@ -72,34 +76,52 @@ function Order() {
               onChange={handleChange}
               name="email"
               type="email"
-              label="Enter your email"
+              label="Email"
+              placeholder="Enter your email"
               value={inputs.email}
               variant='filled' 
+              required
               margin='normal'/>
-
-            <FormLabel sx={{fontFamily: "quicksand"}} >Image URL</FormLabel>
-            <TextField 
-              onChange={handleChange}
-              name="imageURL"
-              value={inputs.imageURL}
-              variant='standard' 
-              margin='normal'/>
-
 
             <FormLabel sx={{fontFamily: "quicksand"}} >Phone Number</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="location"
-              value={inputs.location}
-              variant='standard' 
+              name="number"
+              type="number"
+              label='Number'
+              placeholder="Enter your Number"
+              value={inputs.number}
+              variant='filled' 
+              required
+              margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}} >Delivery Address</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="address"
+              label='Delivery Address'
+              placeholder='Enter your Delivery Address'
+              value={inputs.imageURL}
+              variant='filled' 
+              required
+              margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}} >Residence</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="residence"
+              label="Residence"
+              placeholder='Enter your residence'
+              value={inputs.residence}
+              variant='filled' 
+              required
               margin='normal'/>
 
             <Button 
-              type= "submit"
-              color="warning" 
+              type= "submit" 
               sx={{width:"50%" ,margin:"auto",mt: 2, borderRadius:7}} 
               variant="contained"
-            >Post
+            >Submit
             </Button>
 
           </Box>

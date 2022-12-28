@@ -1,4 +1,5 @@
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 
@@ -7,7 +8,9 @@ function App() {
     <>
       <Router>
         <div>
-          <header></header>
+          <header>
+            <Navbar />
+          </header>
 
           <section>
             <Routes>
