@@ -4,16 +4,16 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please add a name"], //return as an array with the first value is true and the message
+      required: [true, "Please add a name"], // Customer name
     },
     email: {
       type: String,
-      required: [true, "Please add an email"], //return as an array with the first value is true and the message
+      required: [true, "Please add an email"], // Customer nus email
       unique: false,
     },
-    number: {
+    number: { 
       type: String,
-      required: [true, "Please add a number"],
+      required: [true, "Please add a number"], // customer number 
     },
   },
   {

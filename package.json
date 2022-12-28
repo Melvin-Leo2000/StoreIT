@@ -7,12 +7,7 @@
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "server": "nodemon backend/server.js",
     "start": "node backend/server.js",
-<<<<<<< Updated upstream
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-=======
-    "client": "cd frontend && npm run start"
->>>>>>> Stashed changes
+    "client": "npm start --prefix frontend"
   },
   "repository": {
     "type": "git",
