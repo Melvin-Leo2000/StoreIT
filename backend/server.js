@@ -2,7 +2,7 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
-const cors = require('cors')
+const cors = require("cors");
 
 //this is from the env file
 const PORT = process.env.PORT || 3000;
@@ -18,7 +18,7 @@ connectDB();
 const app = express();
 
 //allow the server to run on port 3000 for us to use axios
-app.use(cors())
+app.use(cors());
 
 /**MIDDLEWARE */
 //this is the middleware to have the body parser
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 /**ROUTES */
 //to use the route
 //the end point is /users
-app.use("/users", require("./routes/userRoutes"));
+app.use(require("./routes/userRoutes"));
 
 //SERVE FRONTEND
 if (process.env.NODE_ENV === "production") {

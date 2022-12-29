@@ -2,13 +2,11 @@ import React from 'react'
 import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
 import { useState } from 'react';
-import Categories from '../components/Categories';
 import CardImageSmall from '../components/CardImageSmall';
 import CardImageOdd from '../components/CardImageOdd';
 import CardImageLarge from '../components/CardImageLarge';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
@@ -22,6 +20,7 @@ function Order() {
       smallboxes: 0, 
       largeboxes: 0,
       oddboxes: 0,
+      residence: '',
      }
 
     const [inputs, setInputs] = useState(initialState)
@@ -164,7 +163,7 @@ function Order() {
               margin='normal'/>
 
             <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Residence</FormLabel>
-            <FormControl margin='normal'variant="filled" sx={{fontFamily: "quicksand"}}>
+            <FormControl required margin='normal'variant="filled" sx={{fontFamily: "quicksand"}}>
               <InputLabel id="demo-simple-select-helper-label">Residence</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
@@ -172,13 +171,22 @@ function Order() {
                 name="Residence"
                 value={inputs.residence}
                 label="Residence"
-                required
                 margin='normal'
                 onChange={handleChange}
               >
-                <MenuItem value={"10"}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={"UTR"}>UTR</MenuItem>
+                <MenuItem value={'PGPR'}>PGPR</MenuItem>
+                <MenuItem value={'PGPH'}>PGPH</MenuItem>
+                <MenuItem value={'RVRC'}>RVRC</MenuItem>
+                <MenuItem value={'PGPH'}>PGPH</MenuItem>
+                <MenuItem value={'RC4'}>RC4</MenuItem>
+                <MenuItem value={'CAPT'}>CAPT</MenuItem>
+                <MenuItem value={'Kent Ridge'}>Kent Ridge</MenuItem>
+                <MenuItem value={'King Edwards VII'}>King Edwards VII</MenuItem>
+                <MenuItem value={'Raffles'}>Raffles</MenuItem>
+                <MenuItem value={'Sheares'}>Sheares</MenuItem>
+                <MenuItem value={'Temasek'}>Temasek</MenuItem>
+                <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and west wing)</MenuItem>
               </Select>
             </FormControl>
 

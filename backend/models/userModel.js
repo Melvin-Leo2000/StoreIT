@@ -18,6 +18,22 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a number"], // customer number
     },
+    smallboxes: {
+      type: Number,
+      required: [true, "Please add a number"],
+    },
+    largeboxes: {
+      type: Number,
+      required: [true, "Please add a number"],
+    },
+    oddboxes: {
+      type: Number,
+      required: [true, "Please add a number"],
+    },
+    residence: {
+      type: String,
+      required: [true, "Please add a residence"],
+    },
   },
   {
     timestamps: true,
