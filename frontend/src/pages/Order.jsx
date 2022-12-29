@@ -3,11 +3,14 @@ import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
 import { useState } from 'react';
 import Categories from '../components/Categories';
-{/*import Select, { SelectChangeEvent } from '@mui/material/Select';
+import CardImageSmall from '../components/CardImageSmall';
+import CardImageOdd from '../components/CardImageOdd';
+import CardImageLarge from '../components/CardImageLarge';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';*/}
+import InputLabel from '@mui/material/InputLabel';
 
 function Order() {
 
@@ -15,7 +18,10 @@ function Order() {
       name: '', 
       date: '', 
       email: '', 
-      number : '' 
+      number : '' ,
+      smallboxes: 0, 
+      largeboxes: 0,
+      oddboxes: 0,
      }
 
     const [inputs, setInputs] = useState(initialState)
@@ -110,15 +116,73 @@ function Order() {
             <TextField 
               onChange={handleChange}
               name="number"
-              type="number"
               label='Number'
-              placeholder="Enter your Number"
+              placeholder="Enter your Phone Number"
               value={inputs.number}
               variant='filled' 
               required
               margin='normal'/>
 
-            <Categories />
+            <CardImageSmall/>
+
+            <CardImageLarge />
+
+            <CardImageOdd /> 
+
+            <FormLabel sx={{fontFamily: "quicksand"}} >Small Boxes</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="smallboxes"
+              label="Quantity of Small Boxes"
+              placeholder='Enter your quantity'
+              value={inputs.smallboxes}
+              variant='filled' 
+              type='number'
+              required
+              margin='normal'/>
+            <FormLabel sx={{fontFamily: "quicksand"}} >Large Boxes</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="largeboxes"
+              label="Quantity of Large Boxes"
+              placeholder='Enter your quantity'
+              value={inputs.largeboxes}
+              variant='filled' 
+              type='number'
+              required
+              margin='normal'/>
+            <FormLabel sx={{fontFamily: "quicksand"}} >Odd-Size Items/Luggage case</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="oddboxes"
+              label="Quantity of Odd-Size Items/Luggage case"
+              placeholder='Enter your quantity'
+              value={inputs.oddboxes}
+              variant='filled' 
+              type='number'
+              required
+              margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Residence</FormLabel>
+            <FormControl margin='normal'variant="filled" sx={{fontFamily: "quicksand"}}>
+              <InputLabel id="demo-simple-select-helper-label">Residence</InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                name="Residence"
+                value={inputs.residence}
+                label="Residence"
+                required
+                margin='normal'
+                onChange={handleChange}
+              >
+                <MenuItem value={"10"}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+
+
 
             {/*
             <FormLabel sx={{fontFamily: "quicksand"}} >Delivery Address</FormLabel>
