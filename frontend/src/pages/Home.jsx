@@ -27,7 +27,7 @@ function Home() {
       <div class="overlay">
         <div class="section-b-inner py-5">
           <h3 class="text-2">What's the problem?</h3>
-          <h2 class="text-5 mt-1">It's a hassle to move things back home</h2>
+          <h2 class="text-5">It's a hassle to move things back home</h2>
           <p class="mt-1">
             Moving day can be a pain in the ass. Shifting tons of things can be
             a real hassle, and storing it in school can be costly too, especially 
