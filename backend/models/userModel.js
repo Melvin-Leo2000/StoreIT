@@ -17,7 +17,6 @@ const userSchema = mongoose.Schema(
     number: {
       type: String,
       required: [true, "Please add a number"], // customer number
-      unique: true, //if this is unque, that means the can only make one order?
     },
   },
   {
