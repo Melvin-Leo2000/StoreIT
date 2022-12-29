@@ -5,17 +5,17 @@ const Users = require('../models/userModel')
 const userCtrl = {
   order: async (req, res) => {
       try {
-            const {name,email, number} = req.body
+            const {name, date, email, number} = req.body
           
             // Email validation and tests
-            if(!name || !email || !number)
+            if(!name || !date ||  !email || !number)
               return res.status(400).json({msg: "Please fill in all fields!"})
           
             if(!validateEmail(email))
               return res.status(400).json({msg: "Invalid email."})
 
             const newUser = new Users({
-                name, email, number
+                name, date, email, number
             })
             await newUser.save()
             res.json({msg: "Order has been placed"})

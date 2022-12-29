@@ -1,39 +1,48 @@
 import React from 'react'
+import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
 import { useState } from 'react';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+{/*import Select, { SelectChangeEvent } from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';
+import InputLabel from '@mui/material/InputLabel';*/}
 
 function Order() {
-    const [post, setPost] = useState()
-    const [inputs, setInputs] = useState({
-        name: "", 
-        email: "", 
-        date: "", 
-        number : "", 
-        address: "", 
-        date: "",
-        residence: "",
-        price: "",
-        size: ""
-    })
+
+    const initialState = {
+      name: '', 
+      date: '', 
+      email: '', 
+      number : '' 
+     }
+
+    const [inputs, setInputs] = useState(initialState)
+
+    const {name, date,  email, number} = inputs
     
-    const handleChange = (e) => {
-        setInputs((prevState) => ({
-          ...prevState, 
-          [e.target.name]: e.target.value, 
-        }))
-    
-      }
-    const handleSubmit = (e) => {
+    const handleChange = e => {
+      const {name, value} = e.target
+      setInputs({...inputs, [name]:value})
+    }
+
+
+    const handleSubmit = async e => {
         e.preventDefault()
-        console.log(inputs)
-        // postUpdate(inputs, id)
-        //   .then((data) => console.log(data))
-        //   .catch(err => console.log(err))
+
+        try {
+          const res = await axios.post('/users/order', {
+              name, date, email, number
+          })
+          window.location.replace("/thanks");
+          
+
+        setInputs({...inputs, err: '', success: res.data.msg})
+
+      } catch (err) {
+        err.response.data.msg && 
+        setInputs({...inputs})
+      }
     }
     
     return (
@@ -62,7 +71,7 @@ function Order() {
             width="80%" 
             flexDirection={"column"}>
               
-            {/* <FormLabel sx={{fontFamily: "quicksand"}}>Name: </FormLabel> */}
+            <FormLabel sx={{fontFamily: "quicksand"}}>Name: </FormLabel>
             <TextField 
              onChange={handleChange}
              name="name"
@@ -84,7 +93,7 @@ function Order() {
               required
               margin='normal'/>
 
-            <FormLabel sx={{fontFamily: "quicksand"}}>NUS email</FormLabel>
+            <FormLabel sx={{fontFamily: "quicksand"}}>NUS Email</FormLabel>
             <TextField 
               onChange={handleChange}
               name="email"
@@ -108,6 +117,7 @@ function Order() {
               required
               margin='normal'/>
 
+            {/*
             <FormLabel sx={{fontFamily: "quicksand"}} >Delivery Address</FormLabel>
             <TextField 
               onChange={handleChange}
@@ -147,6 +157,7 @@ function Order() {
                 <MenuItem value={30}>Thirty</MenuItem>
               </Select>
             </FormControl>
+            */}
 
             <Button 
               type= "submit" 

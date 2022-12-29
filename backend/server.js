@@ -2,6 +2,7 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
+const cors = require('cors')
 
 //this is from the env file
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,9 @@ connectDB();
 
 //initialise the app variable from express
 const app = express();
+
+//allow the server to run on port 3000 for us to use axios
+app.use(cors())
 
 /**MIDDLEWARE */
 //this is the middleware to have the body parser

@@ -6,6 +6,7 @@ import Order from "./pages/Order";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
+import Thanks from "./pages/Thanks";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/faq" element={<Faq />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/order" element={<Order />}></Route>
+              <Route path="/thanks" element={<Thanks />}></Route>
             </Routes>
           </section>
         </div>
