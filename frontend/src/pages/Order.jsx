@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
 import { useState } from 'react';
+import Categories from '../components/Categories';
 {/*import Select, { SelectChangeEvent } from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
@@ -116,6 +117,8 @@ function Order() {
               variant='filled' 
               required
               margin='normal'/>
+
+            <Categories />
 
             {/*
             <FormLabel sx={{fontFamily: "quicksand"}} >Delivery Address</FormLabel>
