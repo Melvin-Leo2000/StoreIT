@@ -1,8 +1,9 @@
 import React from 'react'
-import {AppBar, Tab, Tabs, Toolbar, useMediaQuery, Typography } from "@mui/material"
+import {AppBar, Tab, Tabs, Toolbar, useMediaQuery, Typography, IconButton } from "@mui/material"
 import { useState } from 'react';
 import { Link, useNavigate  } from 'react-router-dom';
 import MuiDrawer from './MuiDrawer';
+import StoreIt from '../assets/storeIT.jpg'
 function Navbar() {
     const linksArr = ["home", "about","pricing" ,"faq", "contact", "order"]
     const [value, setValue] = useState()
@@ -13,6 +14,12 @@ function Navbar() {
         
         <AppBar sx={{bgcolor: "transparent", position: "sticky"}}>
             <Toolbar>
+                <IconButton style={{ backgroundColor: 'transparent' }} onClick={() => {
+                        navigate("/")
+                    }}>
+                <img src={StoreIt} alt='Logo' width="60"/>
+                </IconButton>
+
                 <Typography
                     fontWeight="bold"
                     fontSize="clamp(1rem, 2rem, 2.25rem)"
