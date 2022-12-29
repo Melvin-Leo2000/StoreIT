@@ -36,7 +36,7 @@ function Order() {
           })
           window.location.replace("/thanks");
           
-
+        //here shoould send back the status to check fpor the status validation
         setInputs({...inputs, err: '', success: res.data.msg})
 
       } catch (err) {
