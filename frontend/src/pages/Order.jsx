@@ -58,6 +58,7 @@ function Order() {
         flexDirection={"column"} 
         width= "100%"
         height="100%"
+        padding={10}
     >
         <Box display="flex" margin= "auto" padding={2}>
             <Typography fontWeight={'bold'} variant='h4' fontFamily={"dancing script"}>

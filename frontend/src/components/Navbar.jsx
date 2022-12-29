@@ -12,7 +12,7 @@ function Navbar() {
 
     return (
         
-        <AppBar sx={{bgcolor: "transparent", position: "sticky"}}>
+        <AppBar component="nav" sx={{bgcolor: "white"}}>
             <Toolbar>
                 <IconButton style={{ backgroundColor: 'transparent' }} onClick={() => {
                         navigate("/")
