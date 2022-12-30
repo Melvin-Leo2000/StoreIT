@@ -1,8 +1,17 @@
+import { Box } from '@mui/material'
 import React from 'react'
+import AccordionFaq from '../components/AccordionFaq'
 
 function Faq() {
   return (
-    <div>Faq</div>
+    <Box
+      width="100%"
+      margin="auto"
+      padding="200px">
+      
+      <AccordionFaq />
+    </Box>
+
   )
 }
 
