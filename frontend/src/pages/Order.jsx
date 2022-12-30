@@ -58,14 +58,16 @@ function Order() {
         flexDirection={"column"} 
         width= "100%"
         height="100%"
-        padding={10}
+        paddingTop={10}
+        paddingLeft={2}
+        paddingRight={2}
     >
-        <Box display="flex" margin= "auto" padding={2}>
-            <Typography fontWeight={'bold'} variant='h4' fontFamily={"dancing script"}>
+        <Box display="flex" margin= "auto" padding={1}>
+            <Typography fontWeight={'bold'} variant='h4' textAlign={'center'} fontFamily={"dancing script"}>
                 Order with us!
             </Typography>
         </Box>
-        <Box display="flex" margin= "auto" padding={2}>
+        <Box display="flex" margin= "auto" textAlign={'center'} padding={1}>
           <Typography>
             You can add description here
           </Typography>
@@ -75,7 +77,7 @@ function Order() {
             padding={3} 
             display="flex" 
             margin = "auto"
-            width="80%" 
+            width="100%" 
             flexDirection={"column"}>
               
             <FormLabel sx={{fontFamily: "quicksand"}}>Name: </FormLabel>
@@ -124,11 +126,6 @@ function Order() {
               margin='normal'/>
 
             <CardImageSmall/>
-
-            <CardImageLarge />
-
-            <CardImageOdd /> 
-
             <FormLabel sx={{fontFamily: "quicksand"}} >Small Boxes</FormLabel>
             <TextField 
               onChange={handleChange}
@@ -140,6 +137,8 @@ function Order() {
               type='number'
               required
               margin='normal'/>
+
+            <CardImageLarge />
             <FormLabel sx={{fontFamily: "quicksand"}} >Large Boxes</FormLabel>
             <TextField 
               onChange={handleChange}
@@ -151,6 +150,8 @@ function Order() {
               type='number'
               required
               margin='normal'/>
+
+            <CardImageOdd /> 
             <FormLabel sx={{fontFamily: "quicksand"}} >Odd-Size Items/Luggage case</FormLabel>
             <TextField 
               onChange={handleChange}

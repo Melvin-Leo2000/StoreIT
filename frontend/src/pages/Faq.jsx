@@ -17,7 +17,7 @@ function Faq() {
             width={'100%'} 
             sx={{
               position: "absolute", 
-              top: "150px", 
+              top: "120px", 
               color:"#fff",
             }}
           >
