@@ -62,22 +62,6 @@ export default function AccordionFaq() {
           id="panel3bh-header"
         >
           <Typography sx={{ width: '100%', flexShrink: 0 }}>
-            Help! I am unsure of how much space I need to purchase!
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Not to worry, just send a picture to us via our telegram (click on contact) and we will help you estimate the space required!
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography sx={{ width: '100%', flexShrink: 0 }}>
             What happens if I need to change my collection date / return date?
           </Typography>
         </AccordionSummary>
@@ -101,6 +85,23 @@ export default function AccordionFaq() {
           </Typography>
           <Typography>
             However, be sure to do your own due diligence and ensure your items are in proper condition before storing it with us.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3bh-content"
+          id="panel3bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Help! I am unsure of how much space I need to purchase!
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Not to worry, just send a picture to us via our telegram (click on contact) and we will help you estimate the space required!
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -71,12 +71,12 @@ function Order() {
     >
         <Box display="flex" margin= "auto" padding={1}>
             <Typography fontWeight={'bold'} variant='h4' textAlign={'center'} fontFamily={"dancing script"}>
-                Order with us!
+                Storage order
             </Typography>
         </Box>
         <Box display="flex" margin= "auto" textAlign={'center'} padding={1}>
           <Typography>
-            You can add description here
+            Include your details and the number of items you would like to store with us here!
           </Typography>
         </Box>
         <form onSubmit={handleSubmit}>
@@ -133,7 +133,7 @@ function Order() {
               margin='normal'/>
 
             <CardImageSmall/>
-            <FormLabel sx={{fontFamily: "quicksand"}} >Small Boxes</FormLabel>
+            <FormLabel sx={{fontFamily: "quicksand"}} >Small items</FormLabel>
             <TextField 
               onChange={handleChange}
               name="smallboxes"
@@ -151,7 +151,7 @@ function Order() {
               margin='normal'/>
 
             <CardImageLarge />
-            <FormLabel sx={{fontFamily: "quicksand"}} >Large Boxes</FormLabel>
+            <FormLabel sx={{fontFamily: "quicksand"}} >Large items</FormLabel>
             <TextField 
               onChange={handleChange}
               name="largeboxes"
@@ -169,7 +169,7 @@ function Order() {
               margin='normal'/>
 
             <CardImageOdd /> 
-            <FormLabel sx={{fontFamily: "quicksand"}} >Odd-Size Items/Luggage case</FormLabel>
+            <FormLabel sx={{fontFamily: "quicksand"}} >Huge items</FormLabel>
             <TextField 
               onChange={handleChange}
               name="oddboxes"
@@ -236,7 +236,7 @@ function Order() {
               type= "submit" 
               sx={{width:"50%" ,margin:"auto",mt: 2, borderRadius:7}} 
               variant="contained"
-            >Submit
+            >StoreIT
             </Button>
 
           </Box>
