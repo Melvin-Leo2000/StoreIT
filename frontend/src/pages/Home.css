@@ -18,7 +18,7 @@
 }
 
 .section-a-h1 {
-  line-height: 1;
+  line-height: 0.9;
 }
 
 .section-c-h2 {
@@ -47,7 +47,7 @@
 /*section a code */
 .section-a {
   margin: 2rem 0;
-  padding-top: 100px;
+  padding-top: 90px;
   padding-bottom: 150px;
 }
 
@@ -60,15 +60,16 @@
 }
 
 .section-a h1 {
-  font-size: 7rem;
+  font-size: 5rem;
   color: var(--primary-color);
 }
 
 .section-a p {
-  margin: 2rem 0;
+  margin: 1rem 0;
   color: #326fa9;
   font-size: 2rem;
   padding-bottom: 1rem;
+  line-height: 1.2;
 }
 
 /*button code*/
@@ -95,7 +96,7 @@
   position: relative;
   background: url("https://www.priceselfstorage.com/blog/wp-content/uploads/2015/12/stacked-labeled-boxes.jpg")
     no-repeat bottom center/cover;
-  height: 800px;
+  height: 900px;
 }
 
 .section-b-inner {
@@ -208,6 +209,20 @@
   .section-a img {
     width: 80%;
     margin: auto;
+  }
+
+  .section-b-inner p{
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+
+  .section-b-inner h2 {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+
+  .section-b{
+    height:800px;
   }
 
   .features {
