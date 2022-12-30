@@ -34,6 +34,9 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a residence"],
     },
+    price: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

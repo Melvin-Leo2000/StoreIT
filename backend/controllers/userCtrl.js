@@ -13,6 +13,7 @@ const userCtrl = {
         largeboxes,
         oddboxes,
         residence,
+        price,
       } = req.body;
 
       // Email validation and tests
@@ -24,7 +25,8 @@ const userCtrl = {
         !smallboxes ||
         !largeboxes ||
         !oddboxes ||
-        !residence
+        !residence ||
+        !price
       )
         return res.status(400).json({ msg: "Please fill in all fields!" });
 
@@ -40,6 +42,7 @@ const userCtrl = {
         largeboxes,
         oddboxes,
         residence,
+        price,
       });
       await newUser.save();
       res.json({ msg: "Order has been placed" });

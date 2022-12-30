@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Box, FormLabel, TextField, Typography, Button } from '@mui/material'
+import { Box, FormLabel, TextField, Typography, Button, Paper } from '@mui/material'
 import { useState } from 'react';
 import CardImageSmall from '../components/CardImageSmall';
 import CardImageOdd from '../components/CardImageOdd';
@@ -21,11 +21,12 @@ function Order() {
       largeboxes: 0,
       oddboxes: 0,
       residence: '',
+      price: 0,
      }
 
     const [inputs, setInputs] = useState(initialState)
 
-    const {name, date,  email, number} = inputs
+    const {name, date,  email, number, smallboxes, largeboxes, oddboxes, residence, price} = inputs
     
     const handleChange = e => {
       const {name, value} = e.target
@@ -37,8 +38,8 @@ function Order() {
         e.preventDefault()
 
         try {
-          const res = await axios.post('/users/order', {
-              name, date, email, number
+          const res = await axios.post('/order', {
+              name, date, email, number, smallboxes, largeboxes, oddboxes, residence, price
           })
           window.location.replace("/thanks");
           
@@ -49,6 +50,12 @@ function Order() {
         err.response.data.msg && 
         setInputs({...inputs})
       }
+    }
+
+    const getTotal = () => {
+      let totalcost = 0.00;
+      totalcost = smallboxes * 8.00 + largeboxes * 15.00 + oddboxes * 22.00
+      return totalcost
     }
     
     return (
@@ -170,7 +177,7 @@ function Order() {
               <Select
                 labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
-                name="Residence"
+                name="residence"
                 value={inputs.residence}
                 label="Residence"
                 margin='normal'
@@ -191,50 +198,24 @@ function Order() {
                 <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and west wing)</MenuItem>
               </Select>
             </FormControl>
-
-
-
-            {/*
-            <FormLabel sx={{fontFamily: "quicksand"}} >Delivery Address</FormLabel>
-            <TextField 
-              onChange={handleChange}
-              name="address"
-              label='Delivery Address'
-              placeholder='Enter your Delivery Address'
-              value={inputs.imageURL}
-              variant='filled' 
-              required
-              margin='normal'/>
-
-            <FormLabel sx={{fontFamily: "quicksand"}} >Residence</FormLabel>
-            <TextField 
-              onChange={handleChange}
-              name="residence"
-              label="Residence"
-              placeholder='Enter your residence'
-              value={inputs.residence}
-              variant='filled' 
-              required
-              margin='normal'/>
-
-            <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Size</FormLabel>
-            <FormControl variant="filled" sx={{fontFamily: "quicksand"}}>
-              <InputLabel id="demo-simple-select-helper-label">Size</InputLabel>
-              <Select
-                labelId="demo-simple-select-helper-label"
-                id="demo-simple-select-helper"
-                name="size"
-                value={inputs.size}
-                label="Size"
-                required
-                onChange={handleChange}
+            
+            <Box padding={2}>
+            </Box>
+            <Paper
+              elevation={12}
+              
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            */}
+              <Typography
+                padding= {6}
+                textAlign={'center'}
+                fontSize={18}
+              >
+                Your Total Price: $ {getTotal()}
+              </Typography>
+            </Paper>
+            <Box padding={2}>
+            </Box>
+
 
             <Button 
               type= "submit" 
