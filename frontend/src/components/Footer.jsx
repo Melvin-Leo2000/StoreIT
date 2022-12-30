@@ -97,23 +97,6 @@ export default function Footer() {
             </ListItemText>
           </List>
         </Grid>
-        <Grid item md={6} lg={4}>
-          <FooterTitle variant="body1">newsletter</FooterTitle>
-          <Stack>
-            <SubscribeTf
-              color="primary"
-              label="Email address"
-              variant="standard"
-            />
-            <Button
-              startIcon={<SendIcon sx={{ color: Colors.white }} />}
-              sx={{ mt: 4, mb: 4 }}
-              variant="contained"
-            >
-              Subscribe
-            </Button>
-          </Stack>
-        </Grid>
       </Grid>
     </Box>
   );
