@@ -42,60 +42,8 @@ export default function Footer() {
               color: Colors.dove_gray,
             }}
           >
-            <FacebookIcon sx={{ mr: 1 }} />
-            <TwitterIcon sx={{ mr: 1 }} />
-            <InstagramIcon />
+            Copyright © 2023 All Rights Reserved by Melvin Leo & John Lim
           </Box>
-        </Grid>
-        <Grid item md={6} lg={2}>
-          <FooterTitle variant="body1">information</FooterTitle>
-          <List>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                About Us
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Order Tracking
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Privacy &amp; Policy
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Terms &amp; Conditions
-              </Typography>
-            </ListItemText>
-          </List>
-        </Grid>
-        <Grid item md={6} lg={2}>
-          <FooterTitle variant="body1">my account</FooterTitle>
-          <List>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Login
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                My Cart
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                My Account
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Wishlist
-              </Typography>
-            </ListItemText>
-          </List>
         </Grid>
       </Grid>
     </Box>
