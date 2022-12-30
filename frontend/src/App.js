@@ -7,6 +7,7 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import Thanks from "./pages/Thanks";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
               <Route path="/thanks" element={<Thanks />}></Route>
             </Routes>
           </section>
+
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </Router>
     </>
