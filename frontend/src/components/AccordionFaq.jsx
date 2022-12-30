@@ -4,7 +4,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import { Box, Card } from '@mui/material';
+import { borderColor } from '@mui/system';
 export default function AccordionFaq() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -14,6 +15,16 @@ export default function AccordionFaq() {
 
   return (
     <div>
+      <Box
+        width='100%'
+        margin= 'auto'
+        paddingBottom={2}
+        flexDirection={'column'}
+        justifyContent="center" 
+        sx={{borderColor: 'secondary.main'}}
+      >
+        <Typography>General Information</Typography>
+      </Box>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

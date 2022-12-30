@@ -12,7 +12,7 @@ function Faq() {
           <img src={bluebackground} alt="bluewallpaper" width ={"100%"} height="280vh" />
           <Typography 
             fontFamily={'quicksand'}
-            variant="h2" 
+            variant="h3" 
             textAlign={'center'} 
             width={'100%'} 
             sx={{

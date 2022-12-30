@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Drawer, IconButton, Typography } from '@mui/material'
-import { LinkOff, Menu } from '@mui/icons-material'
+import { Menu } from '@mui/icons-material'
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -36,10 +36,10 @@ function MuiDrawer() {
                 to={`${link === "home" ? "/" : link}`}
                 key={link} label={link} disablePadding>
                     <ListItemButton>
-                    <ListItemIcon>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={link.toUpperCase()} />
+                        <ListItemIcon>
+                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={link.toUpperCase()} />
                     </ListItemButton>
                 </ListItem>
                 ))}
