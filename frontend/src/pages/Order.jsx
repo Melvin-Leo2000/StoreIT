@@ -140,6 +140,11 @@ function Order() {
               label="Quantity of Small Boxes"
               placeholder='Enter your quantity'
               value={inputs.smallboxes}
+              InputProps={{
+                inputProps: { 
+                    min: 0
+                }
+              }}
               variant='filled' 
               type='number'
               required
@@ -153,6 +158,11 @@ function Order() {
               label="Quantity of Large Boxes"
               placeholder='Enter your quantity'
               value={inputs.largeboxes}
+              InputProps={{
+                inputProps: { 
+                    min: 0
+                }
+              }}
               variant='filled' 
               type='number'
               required
@@ -166,6 +176,11 @@ function Order() {
               label="Quantity of Odd-Size Items/Luggage case"
               placeholder='Enter your quantity'
               value={inputs.oddboxes}
+              InputProps={{
+                inputProps: { 
+                    min: 0
+                }
+              }}
               variant='filled' 
               type='number'
               required
@@ -198,7 +213,7 @@ function Order() {
                 <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and west wing)</MenuItem>
               </Select>
             </FormControl>
-            
+
             <Box padding={2}>
             </Box>
             <Paper
