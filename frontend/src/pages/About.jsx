@@ -13,7 +13,7 @@ function About() {
   return (
     <div>
 
-    <Grid item paddingTop={8} margin='0' width="100%">
+    <Grid container paddingTop={8} margin='0' width="100%">
               <img src={bluebackground} alt="bluewallpaper" width ={"100%"} height="280vh" />
               <Typography 
                 fontFamily={'quicksand'}
@@ -22,7 +22,7 @@ function About() {
                 width={'100%'} 
                 sx={{
                   position: "absolute", 
-                  top: "120px", 
+                  top: "140px", 
                   color:"#fff",
                 }}
               >

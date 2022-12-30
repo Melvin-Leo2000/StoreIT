@@ -89,11 +89,11 @@ export default function AccordionFaq() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+      <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
+          aria-controls="panel5bh-content"
+          id="panel5bh-header"
         >
           <Typography sx={{ width: '100%', flexShrink: 0 }}>
             Help! I am unsure of how much space I need to purchase!
