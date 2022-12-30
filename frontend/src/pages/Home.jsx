@@ -14,7 +14,7 @@ function Home() {
       <div class="container">
         <div>
           <h1 class="section-a-h1">StoreIT with us!</h1>
-          <p>
+          <p class="section-a-p">
             Storage space solutions for campus dwellers!
           </p>
           <a href="/order" class="btn">Order now</a>

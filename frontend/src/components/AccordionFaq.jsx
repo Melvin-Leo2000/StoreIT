@@ -23,7 +23,7 @@ export default function AccordionFaq() {
         justifyContent="center" 
         sx={{borderColor: 'secondary.main'}}
       >
-        <Typography>General Information</Typography>
+        <Typography>Common questions from fellow students:</Typography>
       </Box>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
@@ -31,14 +31,13 @@ export default function AccordionFaq() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            General settings
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+              Where is the collection point for collection/return runs?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+            The collection point will be at the dropoff point at the main entrance of your respective hall/residence where food is usually dropped off.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -48,13 +47,11 @@ export default function AccordionFaq() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>When will the collection period begin?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-            varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-            laoreet.
+            It can happen anytime, as long as you make an order for the date of collection. Feel free to contact us for additional information regarding collection.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -64,14 +61,29 @@ export default function AccordionFaq() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            Advanced settings
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            Help! I am unsure of how much space I need to purchase!
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+            Not to worry, just send a picture to us via our telegram (click on contact) and we will help you estimate the space required!
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3bh-content"
+          id="panel3bh-header"
+        >
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+            What happens if I need to change my collection date / return date?
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Drop us a message under contacts and we will update on our end accordingly!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -81,12 +93,14 @@ export default function AccordionFaq() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
+          <Typography sx={{ width: '100%', flexShrink: 0 }}>Is there insurance for my items?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+            Yes of course! We will reimburse any cost if the item gets damaged in the moving process if unlikely circumstances like this were to happen. 
+          </Typography>
+          <Typography>
+            However, be sure to do your own due diligence and ensure your items are in proper condition before storing it with us.
           </Typography>
         </AccordionDetails>
       </Accordion>

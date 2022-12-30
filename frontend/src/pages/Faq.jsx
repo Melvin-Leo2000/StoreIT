@@ -17,7 +17,7 @@ function Faq() {
             width={'100%'} 
             sx={{
               position: "absolute", 
-              top: "120px", 
+              top: "150px", 
               color:"#fff",
             }}
           >
@@ -27,9 +27,6 @@ function Faq() {
           
         </Grid>
 
-        <Grid item rowSpacing={2} paddingTop={20} paddingLeft={5} paddingRight={5} margin='auto' direction='column'>
-          <AccordionFaq />
-        </Grid>
         <Grid item rowSpacing={2} paddingTop={20} paddingLeft={5} paddingRight={5} paddingBottom={20} margin='auto' direction='column'>
           <AccordionFaq />
         </Grid>
