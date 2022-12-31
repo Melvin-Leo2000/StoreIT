@@ -2,11 +2,11 @@
   "name": "storeit",
   "version": "1.0.0",
   "description": "Store it",
-  "main": "./server/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "server": "nodemon backend/server.js",
-    "start": "cd ./server && node index.js",
+    "start": "node backend/server.js",
     "client": "npm start --prefix frontend"
   },
   "repository": {
