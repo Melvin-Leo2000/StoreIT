@@ -7,7 +7,8 @@
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "server": "nodemon backend/server.js",
     "start": "node backend/server.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
