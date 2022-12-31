@@ -38,7 +38,7 @@
   width: 130%;
 }
 
-.container {
+.home-container {
   max-width: 1100px;
   margin: auto;
   padding: 0 2rem;
@@ -51,7 +51,7 @@
   padding-bottom: 150px;
 }
 
-.section-a .container {
+.section-a .home-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;

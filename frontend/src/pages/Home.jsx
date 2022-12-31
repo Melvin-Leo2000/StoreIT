@@ -11,7 +11,7 @@ function Home() {
     <div class = "homepage">
     
     <section class="section-a">
-      <div class="container">
+      <div class="home-container">
         <div>
           <h1 class="section-a-h1">StoreIT with us!</h1>
           <p class="section-a-p">
