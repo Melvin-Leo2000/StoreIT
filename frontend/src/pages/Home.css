@@ -193,16 +193,16 @@
 }
 
 @media (max-width: 700px) {
-  .section-a .container {
+  .section-a .home-container {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .section-a .container div:first-child {
+  .section-a .home-container div:first-child {
     order: 2;
   }
 
-  .section-a .container div:nth-child(2) {
+  .section-a .home-container div:nth-child(2) {
     order: -1;
   }
 
