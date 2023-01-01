@@ -2,6 +2,8 @@ import { Button, CardContent, Stack, Grid, TextField, Card , Box,styled, Typogra
 import React from 'react'
 import { useState } from 'react'
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import axios from 'axios'
+
 function ContactForm() {
     const StyledBox = styled(Box)({
         height: 500, 
@@ -28,6 +30,19 @@ function ContactForm() {
     const handleSubmit = async(e) => {
         e.preventDefault()
         console.log(inputs)
+        try {
+            const res = await axios.post('/contact', {
+                name, tele, msg
+            })
+            window.location.replace("/thanks");
+            
+          //here shoould send back the status to check fpor the status validation
+          setInputs({...inputs, err: '', success: res.data.msg})
+  
+        } catch (err) {
+          err.response.data.msg && 
+          setInputs({...inputs})
+        }
     }
 
   return (
@@ -85,9 +100,9 @@ function ContactForm() {
 
                         <Grid xs={12} item>
                             <TextField 
-                                label="Telegram Handle"
+                                label="Contact"
                                 onChange={handleChange}
-                                placeholder='Enter your telegram handle'
+                                placeholder='Enter your telegram handle / Phone number / School Email'
                                 variant='outlined'
                                 name = "tele"
                                 value = {inputs.tele}
@@ -101,7 +116,7 @@ function ContactForm() {
                                 label="Message"
                                 multiline rows={4}
                                 onChange={handleChange}
-                                placeholder='Enter your message'
+                                placeholder='Anything concerning your storage order or general information'
                                 variant='outlined'
                                 name = "msg"
                                 value = {inputs.msg}
