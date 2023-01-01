@@ -1,4 +1,4 @@
-import { Button, CardContent, Stack, Grid, TextField, Card , Box,styled, Typography, Paper, FormLabel} from '@mui/material'
+import { Button, CardContent, Stack, Grid, TextField, Card , Box,styled, Typography, Paper, FormLabel, Divider} from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
@@ -36,9 +36,9 @@ function ContactForm() {
     //name, tele, msg (right side)
     <div>
     <Box>
-        <Stack direction={{xs:"column", sm:'row'}} spacing={{xs:1, sm:2, md:2}} mt={5} ml={2} mr={2} mb={2}>
+        <Stack direction={{xs:"column", sm:'row'}} spacing={{xs:1, sm:1, md:1}} mt={5} ml={2} mr={2} mb={2}>
             
-            <Card style = {{maxWidth: 500, margin: "0 auto", padding: "20px 0px"}}>
+            <Card style = {{maxWidth: 600, margin: "0 auto", padding: "20px 0px"}}>
                 <CardContent>
                     <Typography variant='h5'>
                       Reach us <AccountBoxIcon />
@@ -62,7 +62,9 @@ function ContactForm() {
                 </CardContent>
             </Card>
 
-            <Card style = {{maxWidth: 500, margin: "0 auto", padding: "20px 0px"}}>
+            <Divider />
+
+            <Card style = {{maxWidth: 600, margin: "0 auto", padding: "20px 0px"}}>
                 <CardContent>
                     <Typography gutterBottom variant='h5'>Send your request</Typography>
                     <Typography gutterBottom color='textSecondary' variant= "body2" component= "p" paddingBottom={2}>Fill up the form and we will get back to you as soon as possible</Typography>
