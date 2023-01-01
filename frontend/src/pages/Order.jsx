@@ -47,9 +47,6 @@ function Order() {
     }
 
 
-  
-
-
     const handleSubmit = async e => {
         e.preventDefault()
 

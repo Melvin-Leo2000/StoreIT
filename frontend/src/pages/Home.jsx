@@ -4,9 +4,12 @@ import logo from "./images/storeit-front.png"
 import workone from "./images/workone.png"
 import workthree from "./images/worktwo.png"
 import worktwo from "./images/workthree.png"
-
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <div class = "homepage">
     
@@ -17,7 +20,15 @@ function Home() {
           <p class="section-a-p">
             Storage space solutions for campus dwellers!
           </p>
-          <a href="/order" class="btn">Order now</a>
+          <Button 
+              type= "submit" 
+              sx={{width:"30%" ,margin:"auto",mt: 2, borderRadius:7, height: 50}} 
+              variant="contained"
+              onClick={() => {
+                navigate("/order")
+              }}
+            >Order now
+          </Button>
         </div>
         <img class="section-a-image" src={logo} alt="" />
       </div>
