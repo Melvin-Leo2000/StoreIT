@@ -3,6 +3,7 @@ import { Box , Grid, Typography} from '@mui/material'
 import bluebackground from './images/bluebackground.jpg'
 import MailIcon from '@mui/icons-material/Mail';
 import "./contact.css"
+import ContactForm from '../components/ContactForm';
 
 function Contact() {
   return (
@@ -23,8 +24,9 @@ function Contact() {
             CONTACT US
             <MailIcon  fontSize='28' sx={{marginLeft: 2, marginTop: 1, paddingTop: 1}}/>
           </Typography>
-          
         </Grid>
+
+        <ContactForm />
     </div>
   )
 }
