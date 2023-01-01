@@ -1,4 +1,4 @@
-import { Button, CardContent, Grid, TextField, Card , Box} from '@mui/material'
+import { Button, CardContent, Grid, TextField, Card , Box, Typography} from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 function ContactForm() {
@@ -24,10 +24,22 @@ function ContactForm() {
     //email tele phone left side
     //name, tele, msg (right side)
     <div>
-        <Box>
-            <form onSubmit={handleSubmit}>
+        <Box        
+            display = "flex" 
+            flexDirection={"column"} 
+            width= "100%"
+            height="100%"
+            paddingTop={10}
+            paddingLeft={2}
+            paddingRight={2}
+            paddingBottom={10}
+        >
+
                 <Card style = {{maxWidth: 500, margin: "0 auto", padding: "20px 5px"}}>
                     <CardContent>
+                        <Typography gutterBottom variant='h5'>Contact Us</Typography>
+                        <Typography gutterBottom color='textSecondary' variant= "body2" component= "p" paddingBottom={2}>Fill up the form and we will get back to you as soon as possible</Typography>
+                        <form onSubmit={handleSubmit}>
                         <Grid container spacing={1}>
                             <Grid xs={12} item>
                                 <TextField 
@@ -68,7 +80,7 @@ function ContactForm() {
                                     required
                                 />
                             </Grid>
-                            <Grid sx={12} item>
+                            <Grid xs={3} item>
                                 <Button 
                                     type='submit' 
                                     variant='contained' 
@@ -78,9 +90,9 @@ function ContactForm() {
                                 </Button>
                             </Grid>
                         </Grid>
+                        </form>
                     </CardContent>
                 </Card>
-            </form>
         </Box>
 
 
