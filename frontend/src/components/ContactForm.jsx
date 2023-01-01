@@ -34,6 +34,12 @@ function ContactForm() {
             paddingRight={2}
             paddingBottom={10}
         >
+                {/* <Card style = {{maxWidth: 500, margin: "0 auto", padding: "20px 5px"}}>
+                    <CardContent>
+                        <Typography>Hello</Typography>
+                    </CardContent>
+                    
+                </Card> */}
 
                 <Card style = {{maxWidth: 500, margin: "0 auto", padding: "20px 5px"}}>
                     <CardContent>
