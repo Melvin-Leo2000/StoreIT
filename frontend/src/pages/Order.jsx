@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react';
 import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button, Paper } from '@mui/material'
 import { useState } from 'react';
@@ -10,11 +10,17 @@ import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { TwoK } from '@mui/icons-material';
+
 function Order() {
 
     const initialState = {
       name: '', 
-      date: '', 
+      date: '',
+      datetwo: '', 
       email: '', 
       number : '' ,
       smallboxes: 0, 
@@ -22,16 +28,26 @@ function Order() {
       oddboxes: 0,
       residence: '',
       price: 0,
+      duration: 0
      }
+     
 
     const [inputs, setInputs] = useState(initialState)
+    const [value, setValue] = React.useState(null);
+    const [valuetwo, setValuetwo] = React.useState(null);
 
-    const {name, date,  email, number, smallboxes, largeboxes, oddboxes, residence, price} = inputs
+    const {name, date, datetwo, email, number, smallboxes, largeboxes, oddboxes, residence, price, duration} = inputs
     
     const handleChange = e => {
       const {name, value} = e.target
+      if (e?.key === '-' || e?.key === '+') {
+        e.preventDefault();
+      }
       setInputs({...inputs, [name]:value})
     }
+
+
+  
 
 
     const handleSubmit = async e => {
@@ -39,7 +55,7 @@ function Order() {
 
         try {
           const res = await axios.post('/order', {
-              name, date, email, number, smallboxes, largeboxes, oddboxes, residence, price
+              name, date, datetwo, email, number, smallboxes, largeboxes, oddboxes, residence, price
           })
           window.location.replace("/thanks");
           
@@ -54,7 +70,7 @@ function Order() {
 
     const getTotal = () => {
       let totalcost = 0.00;
-      totalcost = smallboxes * 8.00 + largeboxes * 15.00 + oddboxes * 22.00
+      totalcost = duration * (smallboxes * 8.00 + largeboxes * 15.00 + oddboxes * 22.00)
       return totalcost
     }
     
@@ -87,7 +103,6 @@ function Order() {
             width="100%" 
             flexDirection={"column"}>
               
-            <FormLabel sx={{fontFamily: "quicksand"}}>Name: </FormLabel>
             <TextField 
              onChange={handleChange}
              name="name"
@@ -98,18 +113,20 @@ function Order() {
              margin='normal' 
              required
              />
-
-            <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
+             
+            <FormLabel sx={{fontFamily: "quicksand"}} >Telegram handle / Phone number:</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="date"
-              type="date"
-              value={inputs.date}
-              variant='outlined' 
+              name="number"
+              label='Number'
+              placeholder="Enter your Phone Number"
+              value={inputs.number}
+              variant='filled' 
               required
               margin='normal'/>
 
-            <FormLabel sx={{fontFamily: "quicksand"}}>NUS Email</FormLabel>
+
+            <FormLabel sx={{fontFamily: "quicksand"}}>School Email / Personal Email</FormLabel>
             <TextField 
               onChange={handleChange}
               name="email"
@@ -121,16 +138,55 @@ function Order() {
               required
               margin='normal'/>
 
-            <FormLabel sx={{fontFamily: "quicksand"}} >Phone Number</FormLabel>
+            <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="number"
-              label='Number'
-              placeholder="Enter your Phone Number"
-              value={inputs.number}
-              variant='filled' 
+              name="date"
+              type="date"
+              value={inputs.date}
+              variant='outlined' 
               required
               margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}}>Time of collection</FormLabel>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <TimePicker
+                label="Collection Time"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params}
+                required
+                margin='normal' />}
+              />
+            </LocalizationProvider>
+
+
+            <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of return</FormLabel>
+            <TextField 
+              onChange={handleChange}
+              name="datetwo"
+              type="date"
+              value={inputs.datetwo}
+              variant='outlined' 
+              required
+              margin='normal'/>
+
+            <FormLabel sx={{fontFamily: "quicksand"}}>Time of return (feel free to leave this blank if you are unsure, and just drop us a message under contact nearer to the date!) </FormLabel>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <TimePicker
+                label="Return Time"
+                value={valuetwo}
+                onChange={(newValue) => {
+                  setValuetwo(newValue);
+                }}
+                renderInput={(params) => <TextField {...params}
+                margin='normal' />}
+              />
+            </LocalizationProvider>
+
+
 
             <CardImageSmall/>
             <FormLabel sx={{fontFamily: "quicksand"}} >Small items</FormLabel>
@@ -186,6 +242,23 @@ function Order() {
               required
               margin='normal'/>
 
+
+            <TextField 
+              onChange={handleChange}
+              name="duration"
+              label="Duration of Storage"
+              placeholder='No. of months'
+              value={inputs.duration}
+              InputProps={{
+                inputProps: { 
+                    min: 0
+                }
+              }}
+              variant='filled' 
+              type='number'
+              required
+              margin='normal'/>
+
             <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Residence</FormLabel>
             <FormControl required margin='normal'variant="filled" sx={{fontFamily: "quicksand"}}>
               <InputLabel id="demo-simple-select-helper-label">Residence</InputLabel>
@@ -214,6 +287,28 @@ function Order() {
               </Select>
             </FormControl>
 
+
+            <FormLabel sx={{fontFamily: "quicksand", paddingBottom: 2}} margin='normal' >Additional notes for us</FormLabel>
+            <Box
+                  component="form"
+                  sx={{
+                    "& .MuiTextField-root": { m: 0, width: "100%" }
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+      <div>
+        <TextField
+          id="outlined-multiline-static"
+          label="Message"
+          multiline
+          rows={4}
+          
+        />
+      </div>
+
+            </Box>
+
             <Box padding={2}>
             </Box>
             <Paper
@@ -231,6 +326,8 @@ function Order() {
             <Box padding={2}>
             </Box>
 
+            <FormLabel sx={{fontFamily: "quicksand"}} >Method of Payment</FormLabel>
+
 
             <Button 
               type= "submit" 
@@ -240,6 +337,7 @@ function Order() {
             </Button>
 
           </Box>
+
         </form>
     </Box>
   )
