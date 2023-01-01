@@ -23,7 +23,7 @@ export default function AccordionFaq() {
         justifyContent="center" 
         sx={{borderColor: 'secondary.main'}}
       >
-        <Typography>Common questions from fellow students:</Typography>
+        <Typography fontSize={20}>Common questions from fellow students:</Typography>
       </Box>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary

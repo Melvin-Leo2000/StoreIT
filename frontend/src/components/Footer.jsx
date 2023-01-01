@@ -32,9 +32,9 @@ export default function Footer() {
         <Grid item md={6} lg={4}>
           <FooterTitle variant="body1">About us</FooterTitle>
           <Typography variant="caption2">
-            Lorem ipsum dolor sit amet cons adipisicing elit sed do eiusm tempor
-            incididunt ut labor et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud.
+          StoreIT in winter of 2022 under the NUS Entrepreneurship Society's "Start" programme 
+          hopes to resolve storage problems faced by students by 
+          batching and reducing the cost + hassle of moving their items to and from school.
           </Typography>
           <Box
             sx={{
