@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema(
+const contactSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please add a name"], 
+      required: [true, "Please add a name"],
     },
     tele: {
       type: String,
@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema(
     },
     msg: {
       type: String,
-      required: [true, "Please add a message"], 
+      required: [true, "Please add a message"],
     },
   },
   {
@@ -20,4 +20,4 @@ const userSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("contact", userSchema);
+module.exports = mongoose.model("contacts", contactSchema);

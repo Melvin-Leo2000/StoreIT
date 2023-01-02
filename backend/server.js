@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 
 /**ROUTES */
 //to use the route
-//the end point is /users
+//the end point is /
 app.use(require("./routes/userRoutes"));
 
 //SERVE FRONTEND
