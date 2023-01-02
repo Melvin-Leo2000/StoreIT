@@ -6,25 +6,33 @@ const userCtrl = {
     try {
       const {
         name,
-        date,
+        contact,
         email,
-        number,
-        smallboxes,
-        largeboxes,
-        oddboxes,
+        collectiondate,
+        collectiontime,
+        returndate,
+        returntime,
+        smallitems,
+        largeitems,
+        hugeitems,
+        duration,
         residence,
+        notes,
         price,
       } = req.body;
 
       // Email validation and tests
       if (
         !name ||
-        !date ||
+        !contact ||
         !email ||
-        !number ||
-        !smallboxes ||
-        !largeboxes ||
-        !oddboxes ||
+        !collectiondate ||
+        !collectiontime ||
+        !returndate ||
+        !smallitems ||
+        !largeitems ||
+        !hugeitems ||
+        !duration ||
         !residence ||
         !price
       )
@@ -35,13 +43,18 @@ const userCtrl = {
 
       const newUser = new Users({
         name,
-        date,
+        contact,
         email,
-        number,
-        smallboxes,
-        largeboxes,
-        oddboxes,
+        collectiondate,
+        collectiontime,
+        returndate,
+        returntime,
+        smallitems,
+        largeitems,
+        hugeitems,
+        duration,
         residence,
+        notes,
         price,
       });
       await newUser.save();

@@ -16,47 +16,81 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { TwoK } from '@mui/icons-material';
 
 function Order() {
-
     const initialState = {
       name: '', 
-      date: '',
-      datetwo: '', 
-      email: '', 
-      number : '' ,
-      smallboxes: 0, 
-      largeboxes: 0,
-      oddboxes: 0,
+      contact: '',
+      email: '',
+      collectiondate: '',
+      collectiontime: '',
+      returndate: '',
+      returntime: '',
+      smallitems: '',
+      largeitems: '',
+      hugeitems: '',
+      duration: '',
       residence: '',
-      price: 0,
-      duration: 0
+      notes: '',
+      price: '',
      }
      
-
     const [inputs, setInputs] = useState(initialState)
-    const [value, setValue] = React.useState(null);
-    const [valuetwo, setValuetwo] = React.useState(null);
+    const [collection_time, setValue] = React.useState(null);
+    const [return_time, setValuetwo] = React.useState(null);
 
-    const {name, date, datetwo, email, number, smallboxes, largeboxes, oddboxes, residence, price, duration} = inputs
+    const {
+      name,
+      contact,
+      email,
+      collectiondate,
+      collectiontime,
+      returndate,
+      returntime,
+      smallitems,
+      largeitems,
+      hugeitems,
+      duration,
+      residence,
+      notes,
+      price,
+    } = inputs
     
     const handleChange = e => {
       const {name, value} = e.target
-      if (e?.key === '-' || e?.key === '+') {
-        e.preventDefault();
-      }
       setInputs({...inputs, [name]:value})
     }
 
 
+    
+
+
     const handleSubmit = async e => {
         e.preventDefault()
+        inputs.price = getTotal()
+        
+        inputs.collectiontime = new Date(collection_time).toLocaleTimeString()
+        inputs.returntime = new Date(return_time).toLocaleTimeString()
+
+        console.log(inputs)
 
         try {
           const res = await axios.post('/order', {
-              name, date, datetwo, email, number, smallboxes, largeboxes, oddboxes, residence, price
+            name,
+            contact,
+            email,
+            collectiondate,
+            collectiontime,
+            returndate,
+            returntime,
+            smallitems,
+            largeitems,
+            hugeitems,
+            duration,
+            residence,
+            notes,
+            price,
           })
           window.location.replace("/thanks");
           
-        //here shoould send back the status to check fpor the status validation
         setInputs({...inputs, err: '', success: res.data.msg})
 
       } catch (err) {
@@ -67,7 +101,7 @@ function Order() {
 
     const getTotal = () => {
       let totalcost = 0.00;
-      totalcost = duration * (smallboxes * 8.00 + largeboxes * 15.00 + oddboxes * 22.00)
+      totalcost = duration * (smallitems * 8.00 + largeitems * 15.00 + hugeitems * 22.00)
       return totalcost
     }
     
@@ -114,10 +148,10 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}} >Telegram handle / Phone number:</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="number"
+              name="contact"
               label='Number'
               placeholder="Enter your Phone Number"
-              value={inputs.number}
+              value={inputs.contact}
               variant='filled' 
               required
               margin='normal'/>
@@ -138,9 +172,9 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="date"
+              name="collectiondate"
               type="date"
-              value={inputs.date}
+              value={inputs.collectiondate}
               variant='outlined' 
               required
               margin='normal'/>
@@ -149,7 +183,7 @@ function Order() {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <TimePicker
                 label="Collection Time"
-                value={value}
+                value={collection_time}
                 onChange={(newValue) => {
                   setValue(newValue);
                 }}
@@ -163,9 +197,9 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of return</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="datetwo"
+              name="returndate"
               type="date"
-              value={inputs.datetwo}
+              value={inputs.returndate}
               variant='outlined' 
               required
               margin='normal'/>
@@ -174,7 +208,7 @@ function Order() {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <TimePicker
                 label="Return Time"
-                value={valuetwo}
+                value={return_time}
                 onChange={(newValue) => {
                   setValuetwo(newValue);
                 }}
@@ -189,10 +223,10 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}} >Small items</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="smallboxes"
+              name="smallitems"
               label="Quantity of Small Boxes"
               placeholder='Enter your quantity'
-              value={inputs.smallboxes}
+              value={inputs.smallitems}
               InputProps={{
                 inputProps: { 
                     min: 0
@@ -207,10 +241,10 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}} >Large items</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="largeboxes"
+              name="largeitems"
               label="Quantity of Large Boxes"
               placeholder='Enter your quantity'
-              value={inputs.largeboxes}
+              value={inputs.largeitems}
               InputProps={{
                 inputProps: { 
                     min: 0
@@ -225,10 +259,10 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}} >Huge items</FormLabel>
             <TextField 
               onChange={handleChange}
-              name="oddboxes"
+              name="hugeitems"
               label="Quantity of Odd-Size Items/Luggage case"
               placeholder='Enter your quantity'
-              value={inputs.oddboxes}
+              value={inputs.hugeitems}
               InputProps={{
                 inputProps: { 
                     min: 0
@@ -248,7 +282,7 @@ function Order() {
               value={inputs.duration}
               InputProps={{
                 inputProps: { 
-                    min: 0
+                    min: 1
                 }
               }}
               variant='filled' 
@@ -300,7 +334,9 @@ function Order() {
           label="Message"
           multiline
           rows={4}
-          
+          name="notes"
+          value={inputs.notes}
+          onChange={handleChange}
         />
       </div>
 
@@ -316,6 +352,8 @@ function Order() {
                 padding= {6}
                 textAlign={'center'}
                 fontSize={18}
+                onChange={handleChange}
+                value={inputs.price}
               >
                 Your Total Price: $ {getTotal()}
               </Typography>

@@ -4,35 +4,53 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please add a name"], // Customer name
+      required: [true, "Please add a name"], 
     },
-    date: {
+    contact: {
       type: String,
-      required: [true, "Please add a date"], // Customer date
+      required: [true, "Please add a contact"], 
     },
     email: {
       type: String,
-      required: [true, "Please add an email"], // Customer nus email
+      required: [true, "Please add an email"], 
     },
-    number: {
+    collectiondate: {
       type: String,
-      required: [true, "Please add a number"], // customer number
+      required: [true, "Please add a collection date"], 
     },
-    smallboxes: {
-      type: Number,
+    collectiontime: {
+      type: String,
+      required: [true, "Please add a collection time"],
+    },
+    returndate: {
+      type: String,
+      required: [true, "Please add a date"], 
+    },
+    returntime: {
+      type: String,
+    },
+    smallitems: {
+      type: String,
       required: [true, "Please add a number"],
     },
-    largeboxes: {
-      type: Number,
+    largeitems: {
+      type: String,
       required: [true, "Please add a number"],
     },
-    oddboxes: {
-      type: Number,
+    hugeitems: {
+      type: String,
+      required: [true, "Please add a number"],
+    },
+    duration: {
+      type: String,
       required: [true, "Please add a number"],
     },
     residence: {
       type: String,
       required: [true, "Please add a residence"],
+    },
+    notes: {
+      type: String,
     },
     price: {
       type: Number,
