@@ -14,8 +14,11 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { TwoK } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function Order() {
+  const navigate = useNavigate
+
     const initialState = {
       name: '', 
       contact: '',
@@ -89,7 +92,7 @@ function Order() {
             notes,
             price,
           })
-          window.location.replace("/thanks");
+          navigate('/thanks')
           
         setInputs({...inputs, err: '', success: res.data.msg})
 

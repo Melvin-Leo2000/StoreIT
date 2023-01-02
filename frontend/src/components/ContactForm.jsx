@@ -3,8 +3,10 @@ import React from 'react'
 import { useState } from 'react'
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 function ContactForm() {
+    const navigate = useNavigate()
     const StyledBox = styled(Box)({
         height: 500, 
         width: "100%", 
@@ -34,7 +36,7 @@ function ContactForm() {
             const res = await axios.post('/contact', {
                 name, tele, msg
             })
-            window.location.replace("/thanks");
+            navigate('/thanks')
             
           //here shoould send back the status to check fpor the status validation
           setInputs({...inputs, err: '', success: res.data.msg})
