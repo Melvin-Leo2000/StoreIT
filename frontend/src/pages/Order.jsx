@@ -14,8 +14,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { TwoK } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function Order() {
+  const navigate = useNavigate
 
     const initialState = {
       name: '', 
@@ -54,7 +56,7 @@ function Order() {
           const res = await axios.post('/order', {
               name, date, datetwo, email, number, smallboxes, largeboxes, oddboxes, residence, price
           })
-          window.location.replace("/thanks");
+          navigate('/thanks')
           
         //here shoould send back the status to check fpor the status validation
         setInputs({...inputs, err: '', success: res.data.msg})
