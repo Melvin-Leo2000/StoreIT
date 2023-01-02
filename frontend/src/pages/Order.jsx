@@ -17,7 +17,7 @@ import { TwoK } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 function Order() {
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
     const initialState = {
       name: '', 
@@ -99,6 +99,7 @@ function Order() {
       } catch (err) {
         err.response.data.msg && 
         setInputs({...inputs})
+        console.log(err)
       }
     }
 
