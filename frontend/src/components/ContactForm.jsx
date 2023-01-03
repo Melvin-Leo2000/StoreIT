@@ -5,8 +5,9 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
+import Popup from "./Popup.jsx";
+
 function ContactForm() {
-    const navigate = useNavigate()
     const StyledBox = styled(Box)({
         height: 500, 
         width: "100%", 
@@ -31,12 +32,16 @@ function ContactForm() {
     }
     const handleSubmit = async(e) => {
         e.preventDefault()
-        console.log(inputs)
+        setIsOpen(!isOpen)
+        inputs.name=''
+        inputs.tele=''
+        inputs.msg=''
+
         try {
             const res = await axios.post('/contact', {
                 name, tele, msg
             })
-            navigate('/thanks')
+        
             
           //here shoould send back the status to check fpor the status validation
           setInputs({...inputs, err: '', success: res.data.msg})
@@ -46,6 +51,13 @@ function ContactForm() {
           setInputs({...inputs})
         }
     }
+
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
 
   return (
     
@@ -127,13 +139,22 @@ function ContactForm() {
                             />
                         </Grid>
                         <Grid xs={3} item>
-                            <Button 
-                                type='submit' 
-                                variant='contained' 
-                                color='primary'
-                                sx={{width:"100%" ,margin:"auto",mt: 2}} 
-                            >Submit
-                            </Button>
+                            <div>
+                                <Button 
+                                    type='submit' 
+                                    variant='contained' 
+                                    color='primary'
+                                    sx={{width:"100%" ,margin:"auto",mt: 2}}
+                                >Submit
+                                </Button>
+                                {isOpen && <Popup 
+                                    handleClose={togglePopup}
+                                    content={<div>
+                                        <h2 class='concern-h2'>Thank you for the message!</h2>
+                                        <p class='concern-p'>We will reply you as soon as possible regarding your concern!</p>
+                                    </div>}
+                                />}
+                            </div>
                         </Grid>
                     </Grid>
                     </form>

@@ -5,6 +5,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import "./contact.css"
 import ContactForm from '../components/ContactForm';
 
+
 function Contact() {
   return (
     <div>
