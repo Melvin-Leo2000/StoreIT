@@ -2,20 +2,15 @@
 
 ## Table of contents
 
-<hr>
-
 - [General info](#general-info)
 - [About us](#about-us)
 - [Technologies](#technologies)
 
 ## General Information
 
-<hr>
-
 ## About Us
 
-<hr>
-We’re a group of NUS students who also lives on campus and faces the problem of bringing home lots of belongings and items every time the semester comes to an end.  Realizing this pain point, we launched StoreIT in winter of 2022 under the NUS Entrepreneurship Society's "Start" programme in hopes to resolve storage problems faced by students by batching and reducing the cost + hassle of moving their items to and from school.
+We’re a group of NUS students who also lives on campus and faces the problem of bringing home lots of belongings and items every time the semester comes to an end. Realizing this pain point, we launched StoreIT in winter of 2022 under the NUS Entrepreneurship Society's "Start" programme in hopes to resolve storage problems faced by students by batching and reducing the cost + hassle of moving their items to and from school.
 
 <br>
 Since our inception last semester, We have managed to help more than a hundred students to store their items for our first run, and we are looking to continue making your moving out experience a seamless one.
@@ -25,7 +20,6 @@ Since our inception last semester, We have managed to help more than a hundred s
 
 ## Technologies
 
-<hr/>
 Project is created with:
 
 - MongoDB
