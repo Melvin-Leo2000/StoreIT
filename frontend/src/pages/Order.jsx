@@ -13,13 +13,16 @@ import InputLabel from '@mui/material/InputLabel';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { TwoK } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+
+
+import Popup from "./orderPopup.jsx";
+import image from "./images/ordered.png"
+
 
 
 
 function Order() {
-  const navigate = useNavigate()
+
 
     const initialState = {
       name: '', 
@@ -65,9 +68,6 @@ function Order() {
     }
 
 
-    
-
-
     const handleSubmit = async e => {
         e.preventDefault()
         inputs.price = getTotal()
@@ -94,8 +94,24 @@ function Order() {
             notes,
             price,
           })
-          navigate('/thanks')
-          
+        setValue(null)
+        setValuetwo(null)
+        inputs.name = ''
+        inputs.contact = ''
+        inputs.email = ''
+        inputs.collectiondate = ''
+        inputs.collectiontime=''
+        inputs.returntime=''
+        inputs.returndate = ''
+        inputs.smallitems = ''
+        inputs.largeitems = ''
+        inputs.hugeitems = ''
+        inputs.duration = ''
+        inputs.residence = ''
+        inputs.notes = ''
+        inputs.price = ''
+        setIsOpen(!isOpen)
+
         setInputs({...inputs, err: '', success: res.data.msg})
 
       } catch (err) {
@@ -111,6 +127,12 @@ function Order() {
       return totalcost
     }
     
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
     
     <Box 
@@ -320,7 +342,7 @@ function Order() {
                 <MenuItem value={'Raffles'}>Raffles</MenuItem>
                 <MenuItem value={'Sheares'}>Sheares</MenuItem>
                 <MenuItem value={'Temasek'}>Temasek</MenuItem>
-                <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and west wing)</MenuItem>
+                <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and West Wing)</MenuItem>
               </Select>
             </FormControl>
 
@@ -374,6 +396,13 @@ function Order() {
               variant="contained"
             >StoreIT
             </Button>
+            {isOpen && <Popup 
+            handleClose={togglePopup}
+            content={<div>
+                <h2 class='thankyou-h2'>Order has been placed!</h2>
+                <img class='concern-img'src={image} alt=""></img>  
+                <p class='thankyou-p'>Do check your email for confirmation of your storage details!</p> 
+            </div>} />}
 
           </Box>
 
