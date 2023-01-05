@@ -133,7 +133,6 @@ function ContactForm() {
                                 name = "msg"
                                 value = {inputs.msg}
                                 fullWidth
-                                color = 'secondary'
                                 required
                             />
                         </Grid>
