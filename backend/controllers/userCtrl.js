@@ -1,4 +1,5 @@
 const Users = require("../models/userModel");
+const sendMail = require('./sendMail')
 
 // Order placement
 const userCtrl = {
@@ -58,6 +59,10 @@ const userCtrl = {
         price,
       });
       await newUser.save();
+      
+      sendMail(email, name, collectiondate, collectiontime, returndate, returntime,smallitems,largeitems,hugeitems,duration,residence, price)
+
+
       res.json({ msg: "Order has been placed" });
     } catch (err) {
       return res.status(500).json({ msg: err.message });

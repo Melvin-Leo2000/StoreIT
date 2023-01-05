@@ -58,6 +58,8 @@ function ContactForm() {
         setIsOpen(!isOpen);
     }
 
+    const navigate = useNavigate()
+
 
   return (
     
@@ -75,18 +77,14 @@ function ContactForm() {
                     
                     <Grid container spacing={1} paddingBottom={2} paddingTop={3}>
                         <Grid xs={12} item >
-                          <Typography gutterBottom color='textSecondary' variant= "body1" component= "p" paddingBottom={2}>Email: Testing@gmail.com</Typography>
+                          <Typography  gutterBottom color='textSecondary' variant= "body1" component= "p" paddingBottom={2}><a href="mailto:storeitnus@gmail.com?&Regarding my storage&body= Hello StoreIT!" target="_blank">Email: storeitnus@gmail.com</a></Typography>
                         </Grid>
 
                         <Grid xs={12} item>
-                          <Typography gutterBottom color='textSecondary' variant= "body1" component= "p" paddingBottom={2}>Telegram: ABCD Tan</Typography>
+                          <Typography gutterBottom color='textSecondary' variant= "body1" component= "p" paddingBottom={2} ><a href="https://t.me/bryan1033" target="_blank">Telegram: @bryan1033</a></Typography>
 
                         </Grid>
 
-                        <Grid xs={12} item>
-                          <Typography gutterBottom color='textSecondary' variant= "body1" component= "p" paddingBottom={2}>Phone number: +65 12345678</Typography>
-
-                        </Grid>
                     </Grid>
                 </CardContent>
             </Card>

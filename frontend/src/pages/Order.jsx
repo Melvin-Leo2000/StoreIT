@@ -16,6 +16,8 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { TwoK } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
+
+
 function Order() {
   const navigate = useNavigate()
 
@@ -364,8 +366,6 @@ function Order() {
             </Paper>
             <Box padding={2}>
             </Box>
-
-            <FormLabel sx={{fontFamily: "quicksand"}} >Method of Payment</FormLabel>
 
 
             <Button 
