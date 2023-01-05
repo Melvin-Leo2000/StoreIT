@@ -1,10 +1,10 @@
 # StoreIT
-- https://storeit.onrender.com/
+Website link: https://storeit.onrender.com/
 
 ## Table of contents
 
-- [General info](#general-info)
 - [About us](#about-us)
+- [Key features](#key-features)
 - [Technologies](#technologies)
 
 ## General Information
