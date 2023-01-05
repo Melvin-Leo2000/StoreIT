@@ -1,4 +1,6 @@
 # StoreIT
+
+Description: StoreIT is a student-run business that provides storage services to peers living on campus.
 Website link: https://storeit.onrender.com/
 
 ## Table of contents
