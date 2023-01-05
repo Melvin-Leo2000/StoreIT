@@ -104,7 +104,7 @@ function ContactForm() {
                                 onChange={handleChange}
                                 value = {inputs.name}
                                 placeholder='Enter your name'
-                                variant='outlined'
+                                variant='standard'
                                 fullWidth
                                 required
                             />
@@ -115,7 +115,7 @@ function ContactForm() {
                                 label="Contact"
                                 onChange={handleChange}
                                 placeholder='Enter your telegram handle / Phone number / School Email'
-                                variant='outlined'
+                                variant='standard'
                                 name = "tele"
                                 value = {inputs.tele}
                                 fullWidth
@@ -125,14 +125,15 @@ function ContactForm() {
 
                         <Grid xs={12} item>
                             <TextField 
-                                label="Message"
+                                label= "Message"
                                 multiline rows={4}
                                 onChange={handleChange}
                                 placeholder='Anything concerning your storage order or general information'
-                                variant='outlined'
+                                variant='standard'
                                 name = "msg"
                                 value = {inputs.msg}
                                 fullWidth
+                                color = 'secondary'
                                 required
                             />
                         </Grid>
