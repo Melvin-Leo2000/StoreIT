@@ -25,15 +25,16 @@ Many students, especially foreign students, feels that its a hassle to move tons
 
 ## Key features
 
-# Order page
+**Order page**
 
 An official forms for students to record their details and information regarding their storage duration, number of items, collection and return time. Using the nodemailer npm package , we automated the sending of email receipts to customers upon completing their order. All the information provided is stored in our MongoDB database.
 
-# Contact us 
+**Contact us** 
 
 Simple forms that records additional queries regarding the business to reach out easily to us.
 
-# Admin page
+
+**Admin page**
 
 Admin page curated specifically for ourselves to manage and respond to customer demands and requests. We built one to record customers order sent to us via the order page, and one for contact responses, which we collate and respond back to them through appropriate forms of contact they have given us.
 
