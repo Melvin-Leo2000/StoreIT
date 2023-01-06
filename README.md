@@ -6,8 +6,10 @@
 ## Table of contents
 
 - [About us](#about-us)
+- [User stories](#user-stories)
 - [Key features](#key-features)
 - [Technologies](#technologies)
+- [Contributors](#contributors)
 
 ## General Information
 
