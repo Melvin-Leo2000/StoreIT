@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/Melvin-Leo2000/StoreIT#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.3",
+    "@mui/x-data-grid": "^5.17.18",
     "@mui/x-date-pickers": "^5.0.12",
     "axios": "^1.2.1",
     "bcryptjs": "^2.4.3",

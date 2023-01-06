@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 //to use the route
 //the end point is /
 app.use(require("./routes/userRoutes"));
+app.use(require("./routes/clientRoutes"));
 
 //SERVE FRONTEND
 if (process.env.NODE_ENV === "production") {
