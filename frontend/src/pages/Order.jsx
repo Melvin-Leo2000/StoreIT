@@ -40,7 +40,7 @@ function Order() {
       notes: '',
       price: '',
      }
-     
+    const [isOpen, setIsOpen] = useState(false);
     const [inputs, setInputs] = useState(initialState)
     const [collection_time, setValue] = React.useState(null);
     const [return_time, setValuetwo] = React.useState(null);
@@ -127,8 +127,6 @@ function Order() {
       return totalcost
     }
     
-    const [isOpen, setIsOpen] = useState(false);
-    
     const togglePopup = () => {
         setIsOpen(!isOpen);
     }
@@ -165,10 +163,11 @@ function Order() {
             <TextField 
              onChange={handleChange}
              name="name"
+             size = "small"
              value={inputs.name} 
              label="Name"
              placeholder="Enter your name"
-             variant='filled' 
+             variant='standard' 
              margin='normal' 
              required
              />
@@ -178,9 +177,10 @@ function Order() {
               onChange={handleChange}
               name="contact"
               label='Number'
+              size = 'small'
               placeholder="Enter your Phone Number"
               value={inputs.contact}
-              variant='filled' 
+              variant='standard' 
               required
               margin='normal'/>
 
@@ -193,7 +193,7 @@ function Order() {
               label="Email"
               placeholder="Enter your email"
               value={inputs.email}
-              variant='filled' 
+              variant='standard' 
               required
               margin='normal'/>
 
@@ -203,7 +203,7 @@ function Order() {
               name="collectiondate"
               type="date"
               value={inputs.collectiondate}
-              variant='outlined' 
+              variant='standard' 
               required
               margin='normal'/>
 
@@ -217,6 +217,7 @@ function Order() {
                 }}
                 renderInput={(params) => <TextField {...params}
                 required
+                variant='standard'
                 margin='normal' />}
               />
             </LocalizationProvider>
@@ -228,7 +229,7 @@ function Order() {
               name="returndate"
               type="date"
               value={inputs.returndate}
-              variant='outlined' 
+              variant='standard' 
               required
               margin='normal'/>
 
@@ -241,6 +242,7 @@ function Order() {
                   setValuetwo(newValue);
                 }}
                 renderInput={(params) => <TextField {...params}
+                variant = "standard"
                 margin='normal' />}
               />
             </LocalizationProvider>
@@ -260,7 +262,7 @@ function Order() {
                     min: 0
                 }
               }}
-              variant='filled' 
+              variant='standard' 
               type='number'
               required
               margin='normal'/>
@@ -278,7 +280,7 @@ function Order() {
                     min: 0
                 }
               }}
-              variant='filled' 
+              variant='standard' 
               type='number'
               required
               margin='normal'/>
@@ -296,7 +298,7 @@ function Order() {
                     min: 0
                 }
               }}
-              variant='filled' 
+              variant='standard' 
               type='number'
               required
               margin='normal'/>
@@ -313,13 +315,13 @@ function Order() {
                     min: 1
                 }
               }}
-              variant='filled' 
+              variant='standard' 
               type='number'
               required
               margin='normal'/>
 
             <FormLabel sx={{fontFamily: "quicksand"}} margin='normal' >Residence</FormLabel>
-            <FormControl required margin='normal'variant="filled" sx={{fontFamily: "quicksand"}}>
+            <FormControl required margin='normal'variant="standard" sx={{fontFamily: "quicksand"}}>
               <InputLabel id="demo-simple-select-helper-label">Residence</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
@@ -365,6 +367,7 @@ function Order() {
           name="notes"
           value={inputs.notes}
           onChange={handleChange}
+          variant = "standard"
         />
       </div>
 
