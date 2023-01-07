@@ -4,6 +4,8 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 
+const adminRoute = require("./routes/clientRoutes")
+
 //this is from the env file
 const PORT = process.env.PORT || 3000;
 //get the connectDB function
@@ -29,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 //to use the route
 //the end point is /
 app.use(require("./routes/userRoutes"));
-app.use(require("./routes/clientRoutes"));
+app.use("/posts", adminRoute);
 
 //SERVE FRONTEND
 if (process.env.NODE_ENV === "production") {

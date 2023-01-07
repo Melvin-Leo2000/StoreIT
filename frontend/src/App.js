@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import Thanks from "./pages/Thanks";
 import Footer from "./components/Footer";
-import Admin from "./pages/Admin";
+import Admin from "./pages/Getposts";
 
 function App() {
   return (
