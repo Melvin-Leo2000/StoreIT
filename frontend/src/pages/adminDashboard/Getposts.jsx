@@ -12,7 +12,7 @@ export default function Getposts() {
 
   useEffect(() => {
       const fetchPosts = async () => {
-        const res = await axios.get("/posts");
+        const res = await axios.get("/admin");
         setPosts(res.data)
         
       };

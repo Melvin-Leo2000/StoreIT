@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing/Pricing";
 import Footer from "./components/Footer";
 import Admin from "./pages/adminDashboard/Getposts";
 import Post from "./pages/adminDashboard/Individualorder";
+import AdminContact from "./pages/adminContact/Getposts";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/admin" element={<Admin />}></Route>
               <Route path="/post" element={<Post />}></Route>
               <Route path="/post/:id" element={< Post />} />
+              <Route path="/adminContact" element={<AdminContact />}></Route>
             </Routes>
           </section>
 

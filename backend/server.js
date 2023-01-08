@@ -4,7 +4,8 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 
-const adminRoute = require("./routes/clientRoutes")
+const adminRoute = require("./routes/clientRoutes");
+const adminContact = require("./routes/contactRoutes");
 
 //this is from the env file
 const PORT = process.env.PORT || 3000;
@@ -31,7 +32,8 @@ app.use(express.urlencoded({ extended: false }));
 //to use the route
 //the end point is /
 app.use(require("./routes/userRoutes"));
-app.use("/posts", adminRoute);
+app.use("/admin", adminRoute);
+app.use("/adminContact", adminContact);
 
 //SERVE FRONTEND
 if (process.env.NODE_ENV === "production") {

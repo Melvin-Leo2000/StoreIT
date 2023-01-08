@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const User = require("../models/userModel")
-
+const User = require("../models/userModel");
 
 router.get("/:id", async (req, res) => {
   try {
@@ -12,12 +11,12 @@ router.get("/:id", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-    try {
-      posts = await User.find();
-      res.status(200).json(posts);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  try {
+    posts = await User.find();
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
