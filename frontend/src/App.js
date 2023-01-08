@@ -30,7 +30,7 @@ function App() {
               <Route path="/order" element={<Order />}></Route>
               <Route path="/admin" element={<Admin />}></Route>
               <Route path="/post" element={<Post />}></Route>
-              <Route path="/post/:id" element={< Post />} />
+              <Route path="/post/:id" element={< Post />}></Route>
               <Route path="/adminContact" element={<AdminContact />}></Route>
             </Routes>
           </section>
