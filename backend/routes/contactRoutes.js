@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const User = require("../models/userModel");
+const Contact = require("../models/contactModel");
 
 router.get("/", async (req, res) => {
   try {
-    posts = await User.find();
+    posts = await Contact.find();
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);

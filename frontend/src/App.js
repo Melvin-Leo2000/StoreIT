@@ -8,6 +8,7 @@ import Contact from "./pages/Contact/Contact";
 import Pricing from "./pages/Pricing/Pricing";
 import Footer from "./components/Footer";
 import Admin from "./pages/adminDashboard/Getposts";
+import AdminContact from "./pages/adminContact/Getposts";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/order" element={<Order />}></Route>
               <Route path="/admin" element={<Admin />}></Route>
+              <Route path="/adminContact" element={<AdminContact />}></Route>
             </Routes>
           </section>
 
