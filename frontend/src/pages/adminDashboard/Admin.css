@@ -8,7 +8,13 @@
     border-radius: 20px;
     border: 2px solid #ddd;
     height:230px;
+    color: inherit;
   }
+
+  .customer-order:link { text-decoration: none; }
+  .customer-order:visited { text-decoration: none; }
+  .customer-order:active { text-decoration: none; }
+
   
   .customer-order:hover{
     background-color: #E8F5F7;
@@ -26,6 +32,9 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+
+
   .customer-name{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;

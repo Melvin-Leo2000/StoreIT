@@ -13,7 +13,6 @@ const sendEmail = (to, name, collectiondate, collectiontime, returndate, returnt
     })
 
     const mailOptions = {
-        
         from: "storeitnus@gmail.com",
         to: to,
         subject: "StoreIT Order Confirmation",

@@ -1,11 +1,12 @@
 import React from 'react'
 import './Admin.css'
+import { Link } from "react-router-dom";
 
 
 
 export default function Admin({posts}) {
   return (
-    <div className="customer-order">
+    <Link to={`/post/${posts._id}`} className="customer-order">
       <div class="customer-center">
         <span className="customer-name">{posts.name}</span>
       </div>
@@ -19,7 +20,6 @@ export default function Admin({posts}) {
       <span>
           <div className="customer-price">Paid: {posts.price}</div>
       </span>
-
-    </div>
+    </Link>
   )
 }

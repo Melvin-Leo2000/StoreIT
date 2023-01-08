@@ -22,14 +22,19 @@ export default function Getposts() {
   
   
     return (
-      <div class='admin-getpost'>
-      {posts?.map((posts) => {
-        return(
-        <Post
-           posts={posts} 
-           />
-        )
-      })}
-  </div>
+      <div>
+        <h2 class="admin-dashboard">
+          Customer Orders:
+        </h2>
+        <div class='admin-getpost'>
+            {posts?.map((posts) => {
+              return(
+              <Post
+                posts={posts} 
+                />
+              )
+            })}
+        </div>
+      </div>
       )
   }
