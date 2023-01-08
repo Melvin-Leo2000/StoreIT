@@ -1,9 +1,45 @@
 .individual-order{
     text-align: center;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 20%;
+    padding-right: 20%;
     border: 10px;
-    padding-top: 80px;
+    padding-top: 150px;
     border: 3px;
     color: black;
+}
+
+
+.singlePostWrapper{
+    width: 100%;
+    margin: 0px 25px 40px 25px;
+    display: inline-block;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    height:1200px;
+    color: inherit;
+}
+
+.wording-post{
+    padding-top: 70px;
+}
+
+.PostTitle{
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.singlePostDesc{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+
+.singlePriceDesc{
+    padding-top: 100px;
+    font-size: 50px;
+}
+ 
+.name-title{
 }

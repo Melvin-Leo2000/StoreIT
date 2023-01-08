@@ -30,30 +30,32 @@ export default function Individualoder() {
   return (
       <div className='individual-order'>
         <div className='singlePostWrapper'>
-        <div>Customer Details: </div>
-        <div className="singlePostTitle">Customer: {post.name}</div>
+        <div class='wording-post'>
+        <h1 class='name-title'>Customer: {post.name}</h1>
+        <h1 class='PostTitle'>Customer Details: </h1>
         <p className="singlePostDesc">Contact: {post.contact}</p>
         <p className="singlePostDesc">Email: {post.email}</p>
 
-        <div>Collection and return details: </div>
+        <h1 class='PostTitle'>Collection and return details: </h1>
         <p className="singlePostDesc">Collection Date: {post.collectiondate}</p>
         <p className="singlePostDesc">Collection Time: {post.collectiontime}</p>
 
         <p className="singlePostDesc">Return Date: {post.returndate}</p>
         <p className="singlePostDesc">Collection Time: {post.returntime}</p>
 
-        <div>Items for Storage: </div>
+        <h1 class='PostTitle'>Items for Storage: </h1>
         <p className="singlePostDesc">Small Items: {post.smallitems}</p>
         <p className="singlePostDesc">Large Items: {post.largeitems}</p>
         <p className="singlePostDesc">Huge Iterms: {post.hugeitems}</p>
 
-        <div>Storage Duration and place of residence: </div>
+        <h1 class='PostTitle'>Storage Duration and place of residence: </h1>
         <p className="singlePostDesc">Duration: {post.duration}</p>
         <p className="singlePostDesc">Residence: {post.residence}</p>
 
         <p className="singlePostDesc"> Additional Notes: {post.notes}</p>
 
-        <h1>Total Price: {getTotal()}</h1>
+        <h1 className="singlePriceDesc">Total Price: {getTotal()}</h1>
+        </div>
         </div>
       </div>
     )
