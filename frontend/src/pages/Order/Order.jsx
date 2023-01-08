@@ -2,6 +2,8 @@ import * as React from 'react';
 import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button, Paper } from '@mui/material'
 import { useState } from 'react';
+import dayjs from 'dayjs';
+
 import CardImageSmall from '../../components/CardImageSmall';
 import CardImageOdd from '../../components/CardImageOdd';
 import CardImageLarge from '../../components/CardImageLarge';
@@ -29,30 +31,26 @@ function Order() {
       contact: '',
       email: '',
       collectiondate: '',
-      collectiontime: '',
       returndate: '',
-      returntime: '',
       smallitems: '',
       largeitems: '',
       hugeitems: '',
       duration: '',
       residence: '',
       notes: '',
-      price: 0,
+      price: 0
      }
     const [isOpen, setIsOpen] = useState(false);
     const [inputs, setInputs] = useState(initialState)
-    const [collection_time, setValue] = React.useState(null);
-    const [return_time, setValuetwo] = React.useState(null);
+    const [collectiontime, setValuetwo] = React.useState(dayjs('2018-01-01T00:00:00.000Z'));
+    const [returntime, setValue] = React.useState(dayjs('2018-01-01T00:00:00.000Z'));
 
     const {
       name,
       contact,
       email,
       collectiondate,
-      collectiontime,
       returndate,
-      returntime,
       smallitems,
       largeitems,
       hugeitems,
@@ -70,12 +68,11 @@ function Order() {
 
     const handleSubmit = async e => {
         e.preventDefault()
-        setIsOpen(!isOpen)
-        inputs.price = getTotal()
-        inputs.collectiontime = new Date(collection_time).toLocaleTimeString()
-        inputs.returntime = new Date(return_time).toLocaleTimeString()
-
         console.log(inputs)
+        
+        setIsOpen(!isOpen)
+        //inputs.collectiontime = new Date(collection_time).toLocaleTimeString()
+        //inputs.returntime = new Date(return_time).toLocaleTimeString()
 
         try {
           const res = await axios.post('/order', {
@@ -88,20 +85,18 @@ function Order() {
             returntime: returntime,
             smallitems: smallitems,
             largeitems: largeitems,
-            hugeitems: hugeitems,
+            hugeitems: hugeitems,             
             duration: duration,
             residence: residence,
             notes: notes,
             price: price,
           })
-        setValue(null)
-        setValuetwo(null)
+        setValue(dayjs('2018-01-01T00:00:00.000Z'))
+        setValuetwo(dayjs('2018-01-01T00:00:00.000Z'))
         inputs.name = ''
         inputs.contact = ''
         inputs.email = ''
         inputs.collectiondate = ''
-        inputs.collectiontime=''
-        inputs.returntime=''
         inputs.returndate = ''
         inputs.smallitems = ''
         inputs.largeitems = ''
@@ -120,12 +115,15 @@ function Order() {
         console.log("The axios got error")
       }
     }
-
+    
+    
     const getTotal = () => {
-      let totalcost = 0.00;
-      totalcost = duration * (smallitems * 8.00 + largeitems * 15.00 + hugeitems * 22.00)
+      let totalcost = 0;
+      totalcost = duration * (smallitems * 8 + largeitems * 15 + hugeitems * 22)
+      inputs.price = totalcost
       return totalcost
     }
+    
     
     const togglePopup = () => {
         setIsOpen(!isOpen);
@@ -197,7 +195,9 @@ function Order() {
               required
               margin='normal'/>
 
+            
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
+            
             <TextField 
               onChange={handleChange}
               name="collectiondate"
@@ -210,15 +210,9 @@ function Order() {
             <FormLabel sx={{fontFamily: "quicksand"}}>Time of collection</FormLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <TimePicker
-                label="Collection Time"
-                value={collection_time}
-                onChange={(newValue) => {
-                  setValue(newValue);
-                }}
-                renderInput={(params) => <TextField {...params}
-                required
-                variant='standard'
-                margin='normal' />}
+                value={collectiontime}
+                onChange={setValuetwo}
+                renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
 
@@ -233,22 +227,18 @@ function Order() {
               required
               margin='normal'/>
 
+
+
             <FormLabel sx={{fontFamily: "quicksand"}}>Time of return (feel free to leave this blank if you are unsure, and just drop us a message under contact nearer to the date!) </FormLabel>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <TimePicker
-                label="Return Time"
-                value={return_time}
-                onChange={(newValue) => {
-                  setValuetwo(newValue);
-                }}
-                renderInput={(params) => <TextField {...params}
-                variant = "standard"
-                margin='normal' />}
+            <TimePicker
+                value={returntime}
+                onChange={setValue}
+                renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
 
-
-
+            
             <CardImageSmall/>
             <FormLabel sx={{fontFamily: "quicksand"}} >Small items</FormLabel>
             <TextField 
@@ -304,6 +294,7 @@ function Order() {
               margin='normal'/>
 
 
+
             <TextField 
               onChange={handleChange}
               name="duration"
@@ -348,7 +339,6 @@ function Order() {
               </Select>
             </FormControl>
 
-
             <FormLabel sx={{fontFamily: "quicksand", paddingBottom: 2}} margin='normal' >Additional notes for us</FormLabel>
             <Box
                   component="form"
@@ -358,6 +348,8 @@ function Order() {
                   noValidate
                   autoComplete="off"
                 >
+
+                
       <div>
         <TextField
           id="outlined-multiline-static"
@@ -372,6 +364,7 @@ function Order() {
       </div>
 
             </Box>
+                                                             
 
             <Box padding={2}>
             </Box>
