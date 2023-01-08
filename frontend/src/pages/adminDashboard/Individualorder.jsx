@@ -12,7 +12,7 @@ export default function Individualoder() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
+      const res = await axios.get("/admin/" + path);
       setPost(res.data);
       console.log(post)
     };
