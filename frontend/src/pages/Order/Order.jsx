@@ -38,7 +38,7 @@ function Order() {
       duration: '',
       residence: '',
       notes: '',
-      price: '',
+      price: 0,
      }
     const [isOpen, setIsOpen] = useState(false);
     const [inputs, setInputs] = useState(initialState)
@@ -109,7 +109,7 @@ function Order() {
         inputs.duration = ''
         inputs.residence = ''
         inputs.notes = ''
-        inputs.price = ''
+        inputs.price = 0
 
 
         setInputs({...inputs, err: '', success: res.data.msg})
