@@ -70,8 +70,8 @@ function Order() {
 
     const handleSubmit = async e => {
         e.preventDefault()
+        setIsOpen(!isOpen)
         inputs.price = getTotal()
-        
         inputs.collectiontime = new Date(collection_time).toLocaleTimeString()
         inputs.returntime = new Date(return_time).toLocaleTimeString()
 
@@ -79,20 +79,20 @@ function Order() {
 
         try {
           const res = await axios.post('/order', {
-            name,
-            contact,
-            email,
-            collectiondate,
-            collectiontime,
-            returndate,
-            returntime,
-            smallitems,
-            largeitems,
-            hugeitems,
-            duration,
-            residence,
-            notes,
-            price,
+            name : name,
+            contact: contact,
+            email: email,
+            collectiondate: collectiondate,
+            collectiontime: collectiontime,
+            returndate: returndate,
+            returntime: returntime,
+            smallitems: smallitems,
+            largeitems: largeitems,
+            hugeitems: hugeitems,
+            duration: duration,
+            residence: residence,
+            notes: notes,
+            price: price,
           })
         setValue(null)
         setValuetwo(null)
@@ -110,14 +110,14 @@ function Order() {
         inputs.residence = ''
         inputs.notes = ''
         inputs.price = ''
-        setIsOpen(!isOpen)
+
 
         setInputs({...inputs, err: '', success: res.data.msg})
 
       } catch (err) {
         err.response.data.msg && 
         setInputs({...inputs})
-        console.log(err)
+        console.log("The axios got error")
       }
     }
 
