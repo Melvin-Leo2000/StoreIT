@@ -1,14 +1,13 @@
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Order from "./pages/Order";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
+import Order from "./pages/Order/Order";
 import Faq from "./pages/Faq";
-import Contact from "./pages/Contact";
-import Pricing from "./pages/Pricing";
-import Thanks from "./pages/Thanks";
+import Contact from "./pages/Contact/Contact";
+import Pricing from "./pages/Pricing/Pricing";
 import Footer from "./components/Footer";
-import Admin from "./pages/Getposts";
+import Admin from "./pages/adminDashboard/Getposts";
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
               <Route path="/faq" element={<Faq />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/order" element={<Order />}></Route>
-              <Route path="/thanks" element={<Thanks />}></Route>
               <Route path="/admin" element={<Admin />}></Route>
             </Routes>
           </section>

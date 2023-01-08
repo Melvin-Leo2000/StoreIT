@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Home.css"
-import logo from "./images/storeit-front.png"
-import workone from "./images/workone.png"
-import workthree from "./images/worktwo.png"
-import worktwo from "./images/workthree.png"
+import logo from "../images/storeit-front.png"
+import workone from "../images/workone.png"
+import workthree from "../images/worktwo.png"
+import worktwo from "../images/workthree.png"
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 

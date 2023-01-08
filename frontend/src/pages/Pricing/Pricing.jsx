@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Pricing.css"
-import small from "./images/small.png"
-import large from "./images/large.png"
-import huge from "./images/huge.png"
+import small from "../images/small.png"
+import large from "../images/large.png"
+import huge from "../images/huge.png"
 
 function Pricing() {
   return (

@@ -1,4 +1,4 @@
-import { Box , Grid, Typography} from '@mui/material'
+import { Grid, Typography} from '@mui/material'
 import React from 'react'
 import AccordionFaq from '../components/AccordionFaq'
 import bluebackground from './images/bluebackground.jpg'

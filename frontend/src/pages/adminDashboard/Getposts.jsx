@@ -1,6 +1,7 @@
 import React ,{useEffect, useState } from 'react'
-import Post from './Posts.jsx'
+import Post from "./Admin.jsx";
 import axios from "axios";
+import './Getpost.css'
 
 
 export default function Getposts() {
@@ -13,7 +14,7 @@ export default function Getposts() {
       const fetchPosts = async () => {
         const res = await axios.get("/posts");
         setPosts(res.data)
-
+        
       };
       fetchPosts();
     }, []);
@@ -21,12 +22,11 @@ export default function Getposts() {
   
   
     return (
-      <div >
-      {posts?.map(p => {
+      <div class='admin-getpost'>
+      {posts?.map((posts) => {
         return(
         <Post
            posts={posts} 
-
            />
         )
       })}

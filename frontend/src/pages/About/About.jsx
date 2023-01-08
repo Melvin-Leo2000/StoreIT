@@ -1,13 +1,13 @@
 import React from 'react'
 import "./About.css"
-import { Box , Grid, Typography} from '@mui/material'
-import bluebackground from './images/bluebackground.jpg'
-import worry from "./images/worry.png"
-import launch from "./images/launch.png"
-import why from "./images/why.png"
-import storage from "./images/no-storage.png"
-import save from "./images/save.png"
-import message from "./images/message.png"
+import { Grid, Typography} from '@mui/material'
+import bluebackground from '../images/bluebackground.jpg'
+import worry from "../images/worry.png"
+import launch from "../images/launch.png"
+import why from "../images/why.png"
+import storage from "../images/no-storage.png"
+import save from "../images/save.png"
+import message from "../images/message.png"
 
 function About() {
   return (

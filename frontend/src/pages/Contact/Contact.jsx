@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box , Grid, Typography} from '@mui/material'
-import bluebackground from './images/bluebackground.jpg'
+import { Grid, Typography} from '@mui/material'
+import bluebackground from '../images/bluebackground.jpg'
 import MailIcon from '@mui/icons-material/Mail';
 import "./contact.css"
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../../components/ContactForm';
 
 
 function Contact() {

@@ -2,9 +2,9 @@ import * as React from 'react';
 import axios from 'axios'
 import { Box, FormLabel, TextField, Typography, Button, Paper } from '@mui/material'
 import { useState } from 'react';
-import CardImageSmall from '../components/CardImageSmall';
-import CardImageOdd from '../components/CardImageOdd';
-import CardImageLarge from '../components/CardImageLarge';
+import CardImageSmall from '../../components/CardImageSmall';
+import CardImageOdd from '../../components/CardImageOdd';
+import CardImageLarge from '../../components/CardImageLarge';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,7 +16,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 
 import Popup from "./orderPopup.jsx";
-import image from "./images/ordered.png"
+import image from "../images/ordered.png"
 
 
 
