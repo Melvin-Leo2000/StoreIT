@@ -1,7 +1,7 @@
 .individual-order{
     text-align: center;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     border: 10px;
     padding-top: 150px;
     border: 3px;
@@ -17,7 +17,7 @@
     flex-wrap: wrap;
     border-radius: 20px;
     border: 2px solid #ddd;
-    height:1200px;
+    height:80%;
     color: inherit;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .PostTitle{
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     font-size: 30px;
 }
 
@@ -39,7 +39,28 @@
 .singlePriceDesc{
     padding-top: 100px;
     font-size: 50px;
+    padding-bottom: 100px;
 }
  
 .name-title{
+    font-size: 60px;
+    padding-bottom: 60px;
+}
+
+.post-group{
+    padding-bottom: 40px;
+}
+
+
+.singlePostEdit{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.singlePostTitleInput-items{
+    padding-bottom: 10px;
+}
+
+.singlePostTitleInput{
+    height: 30px;
 }

@@ -14,9 +14,6 @@ export default function AdminContact({posts}) {
       <span>
           <div className="customer-residence">Message: {posts.msg}</div>
       </span>
-      {/* <span>
-          <div className="customer-price">Paid: {posts.price}</div>
-      </span> */}
 
     </div>
   )

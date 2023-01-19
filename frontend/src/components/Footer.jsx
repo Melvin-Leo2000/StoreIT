@@ -36,14 +36,6 @@ export default function Footer() {
           hopes to resolve storage problems faced by students by 
           batching and reducing the cost + hassle of moving their items to and from school.
           </Typography>
-          <Box
-            sx={{
-              mt: 4,
-              color: Colors.dove_gray,
-            }}
-          >
-            Copyright © 2023 All Rights Reserved by Melvin Leo & John Lim
-          </Box>
         </Grid>
       </Grid>
     </Box>

@@ -12,6 +12,9 @@ const sendEmail = (to, name, collectiondate, collectiontime, returndate, returnt
         }
     })
 
+    const collection = new Date(collectiontime).toLocaleTimeString()
+    const returning = new Date(returntime).toLocaleTimeString()
+
     const mailOptions = {
         from: "storeitnus@gmail.com",
         to: to,
@@ -26,8 +29,8 @@ const sendEmail = (to, name, collectiondate, collectiontime, returndate, returnt
             <div style="padding-left: 10%; padding-right: 10%; font-weight: bold;"> 
                 <p style="padding-bottom: 10px;">Collection Date: ${collectiondate}</p>
                 <p style="padding-bottom: 10px;">Return Date: ${returndate}</p>
-                <p style="padding-bottom: 10px;">Collection Time: ${collectiontime}</p>
-                <p style="padding-bottom: 10px;">Return Time: ${returntime}</p>
+                <p style="padding-bottom: 10px;">Collection Time: ${collection}</p>
+                <p style="padding-bottom: 10px;">Return Time: ${returning}</p>
                 <p style="padding-bottom: 10px;">No. of Small Items: ${smallitems}</p>
                 <p style="padding-bottom: 10px;">No. of Large Items: ${largeitems}</p>
                 <p style="padding-bottom: 10px;">No. of Huge Items:  ${hugeitems}</p>
