@@ -1,13 +1,13 @@
 .customer-order {
     width: 285px;
-    margin: 0px 25px 40px 25px;
+    margin: 0px 30px 50px 50px;
     display: inline-block;
     flex-direction: column;
     flex-wrap: wrap;
     background-color: white;
     border-radius: 20px;
     border: 2px solid #ddd;
-    height:250px;
+    height:50%;
     color: inherit;
   }
   

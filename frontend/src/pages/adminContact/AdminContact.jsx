@@ -1,5 +1,4 @@
 import React from 'react'
-import './AdminContact.css'
 
 export default function AdminContact({posts}) {
   return (

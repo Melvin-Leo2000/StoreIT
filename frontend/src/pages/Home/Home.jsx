@@ -40,10 +40,13 @@ function Home() {
           <h3 class="text-2">What's the problem?</h3>
           <h2 class="text-5">It's a hassle to move things back home</h2>
           <p class="mt-1">
-            Moving day can be a pain in the ass. Shifting tons of things can be
-            a real hassle, and storing it in school can be costly too, especially 
-            if you're a foreign student moving back home. As such, StoreIT is created to  
-            meet your storage needs.
+          <div class='home-breakline'>Imagine packing up your dorm room at the end of the semester, only to have to unpack and repack it all again in a few months. Not only is it time-consuming, but it's also a hassle to lug all of your belongings back and forth.</div>
+
+<br></br> <div class='home-breakline'>StoreIT allow you to leave your items securely stored during the summer, so you can come back to school in the fall ready to hit the ground running. No more hauling heavy boxes or trying to fit everything into your car.
+
+Plus, our storage solutions are affordable and accessible, making it easy for you to store your items without breaking the bank.</div>
+
+<br class='home-breakline'></br> Don't waste another summer dealing with the inconvenience of moving all of your belongings. Choose StoreIT and enjoy a stress-free summer!
           </p>
         </div>
       </div>

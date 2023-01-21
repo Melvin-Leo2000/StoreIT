@@ -21,11 +21,7 @@ import Popup from "./orderPopup.jsx";
 import image from "../images/ordered.png"
 
 
-
-
 function Order() {
-
-
     const initialState = {
       name: '', 
       contact: '',
@@ -39,7 +35,8 @@ function Order() {
       residence: '',
       notes: '',
       price: 0
-     }
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     const [inputs, setInputs] = useState(initialState)
     const [collectiontime, setValuetwo] = React.useState(dayjs('2018-01-01T00:00:00.000Z'));
@@ -198,7 +195,6 @@ function Order() {
 
             
             <FormLabel sx={{fontFamily: "quicksand"}}>Desired Date of collection</FormLabel>
-            
             <TextField 
               onChange={handleChange}
               name="collectiondate"

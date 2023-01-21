@@ -10,6 +10,11 @@
   padding: 0;
 }
 
+
+.home-breakline{
+  padding-bottom: 2px;
+}
+
 .homepage {
   font-family: "Catamaran", sans-serif;
   line-height: 1.6;
@@ -96,7 +101,7 @@
   position: relative;
   background: url("https://www.priceselfstorage.com/blog/wp-content/uploads/2015/12/stacked-labeled-boxes.jpg")
     no-repeat bottom center/cover;
-  height: 900px;
+  height: 1100px;
 }
 
 .section-b-inner {
@@ -123,7 +128,10 @@
 
 .mt-1 {
   padding-top: 30px;
+  padding-bottom: 20px;
 }
+
+
 
 .section-b-inner p {
   margin-top: 1rem;
@@ -224,15 +232,19 @@
   .section-b-inner p{
     font-size: 20px;
     padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .section-b-inner h2 {
     font-size: 3rem;
     margin-top: 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .section-b{
-    height:800px;
+    height:1100px;
   }
 
   .features {
