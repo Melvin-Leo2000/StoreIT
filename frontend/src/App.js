@@ -11,6 +11,8 @@ import Admin from "./pages/adminDashboard/Getposts";
 import Post from "./pages/adminDashboard/Individualorder";
 import AdminContact from "./pages/adminContact/Getposts";
 
+import Date from "./pages/adminDate/adminDate"
+
 function App() {
   return (
     <>
@@ -32,6 +34,7 @@ function App() {
               <Route path="/post" element={<Post />}></Route>
               <Route path="/post/:id" element={< Post />}></Route>
               <Route path="/adminContact" element={<AdminContact />}></Route>
+              <Route path="/date" element={<Date />}></Route>
             </Routes>
           </section>
 

@@ -26,7 +26,7 @@ export default function Admin({posts}) {
           <div className="customer-residence">Residence: {posts.residence}</div>
       </span>
       <span>
-          <div className="customer-price">Paid: {getTotal()}</div>
+          <div className="customer-price">Price: {getTotal()}</div>
       </span>
       </div>
     </Link>

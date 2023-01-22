@@ -7,6 +7,7 @@ const cors = require("cors");
 const adminRoute = require("./routes/clientRoutes");
 const adminContact = require("./routes/contactRoutes");
 
+
 //this is from the env file
 const PORT = process.env.PORT || 3000;
 //get the connectDB function

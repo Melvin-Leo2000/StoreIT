@@ -324,12 +324,13 @@ function Order() {
                 <MenuItem value={'PGPR'}>PGPR</MenuItem>
                 <MenuItem value={'PGPH'}>PGPH</MenuItem>
                 <MenuItem value={'RVRC'}>RVRC</MenuItem>
-                <MenuItem value={'PGPH'}>PGPH</MenuItem>
+                <MenuItem value={'TEMBU'}>TEMBU</MenuItem>
                 <MenuItem value={'RC4'}>RC4</MenuItem>
                 <MenuItem value={'CAPT'}>CAPT</MenuItem>
                 <MenuItem value={'Kent Ridge'}>Kent Ridge</MenuItem>
                 <MenuItem value={'King Edwards VII'}>King Edwards VII</MenuItem>
                 <MenuItem value={'Raffles'}>Raffles</MenuItem>
+                <MenuItem value={'Eusoff'}>Eusoff</MenuItem>
                 <MenuItem value={'Sheares'}>Sheares</MenuItem>
                 <MenuItem value={'Temasek'}>Temasek</MenuItem>
                 <MenuItem value={'NUS College (Cinnamon and west wing)'}>NUS College (Cinnamon and West Wing)</MenuItem>
