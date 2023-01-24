@@ -57,7 +57,6 @@ export default function Individualoder() {
       setresidence(res.data.residence);
       setnotes(res.data.notes);
       setprice(res.data.price);
-      console.log(price)
     };
     getPost();
   }, [post,path]);

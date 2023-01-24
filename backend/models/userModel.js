@@ -55,6 +55,10 @@ const userSchema = mongoose.Schema(
     price: {
       type: Number,
     },
+    collected : {
+      type: Boolean,
+      default: false
+    },
   },
   {
     timestamps: true,

@@ -34,7 +34,7 @@ export default function Getposts() {
 
         <h2>Residential Colleges</h2>
         <Link to={`/admin?residence=RVRC`}>RVRC</Link>
-        <Link to={`/admin?residence=Tembusu`}>Tembusu</Link>
+        <Link to={`/admin?residence=TEMBU`}>Tembusu</Link>
         <Link to={`/admin?residence=CAPT`}>CAPT</Link>
         <Link to={`/admin?residence=RC4`}>RC4</Link>
 

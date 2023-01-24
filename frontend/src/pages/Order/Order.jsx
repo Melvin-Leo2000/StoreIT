@@ -324,7 +324,7 @@ function Order() {
                 <MenuItem value={'PGPR'}>PGPR</MenuItem>
                 <MenuItem value={'PGPH'}>PGPH</MenuItem>
                 <MenuItem value={'RVRC'}>RVRC</MenuItem>
-                <MenuItem value={'TEMBU'}>TEMBU</MenuItem>
+                <MenuItem value={'TEMBU'}>TEMBUSU</MenuItem>
                 <MenuItem value={'RC4'}>RC4</MenuItem>
                 <MenuItem value={'CAPT'}>CAPT</MenuItem>
                 <MenuItem value={'Kent Ridge'}>Kent Ridge</MenuItem>

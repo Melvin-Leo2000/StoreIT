@@ -11,14 +11,16 @@
     color: inherit;
   }
   
+  .link-removal{
+    color: inherit;
+  }
 
-  .customer-order:link { text-decoration: none; }
-  .customer-order:visited { text-decoration: none; }
-  .customer-order:active { text-decoration: none; }
+  .link-removal:link { text-decoration: none; }
+  .link-removal:visited { text-decoration: none; }
+  .link-removal:active { text-decoration: none; }
 
   
   .customer-order:hover{
-    background-color: #E8F5F7;
     transform: scale(1.02);
   }
 
@@ -66,3 +68,5 @@
     font-weight: 900;
     padding-top:30px;
   }
+
+
